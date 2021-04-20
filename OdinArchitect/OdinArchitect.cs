@@ -29,16 +29,10 @@ namespace OdinArchitect
 
         private void Awake()
         {
-            LoadMaterialReplacer();
+       
             LoadAssets();
             CreateCustomPieces();
             AddLocalizations();
-        }
-
-        private void LoadMaterialReplacer()
-        {
-            MaterialReplacer.GetAllMaterials();
-            JotunnLib.Logger.LogInfo("Material Replacer loaded succesfully");
         }
 
         private void LoadAssets()
@@ -478,6 +472,15 @@ namespace OdinArchitect
                     }
             });
             JotunnLib.Logger.LogInfo("All pieces and localizations loaded succesfully");
+        }
+
+        public static void ReplaceMats()
+        {
+            JotunnLib.Logger.LogInfo("Material Replacer loaded succesfully");
+
+            MaterialReplacer.GetAllMaterials();
+           //you need prefab in here MaterialReplacer.ReplaceAllMaterialsWithOriginal(Create_wooden_gate_1_prefab);
+
         }
 
 #if DEBUG

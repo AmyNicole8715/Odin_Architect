@@ -11,7 +11,6 @@ using JotunnLib.Utils;
 using JotunnLib.Entities;
 using JotunnLib.Configs;
 using HarmonyLib;
-using Utils;
 
 namespace OdinArchitect
 {
@@ -34,6 +33,7 @@ namespace OdinArchitect
             LoadAssets();
             CreateCustomPieces();
             AddLocalizations();
+            ReplaceMats();
         }
 
         private void LoadAssets()
@@ -44,6 +44,7 @@ namespace OdinArchitect
 
         public static void CreateCustomPieces()
         {
+            Harmony.CreateAndPatchAll(Assembly.GetExecutingAssembly(), "com.raelaziel");
             // Piece: wooden_gate_1 //
             // look at this change too
             OdinArchitect.Create_wooden_gate_1_prefab = OdinArchitectBundle.LoadAsset<GameObject>("wooden_gate_1");
@@ -473,15 +474,13 @@ namespace OdinArchitect
                         { "odin_hammer_desc", "Młot dzięki któremu wybudujesz unikatowe, wcześniej niedostępne elementy budownictwa" }
                     }
             });
-            JotunnLib.Logger.LogInfo("All pieces and localizations loaded succesfully");
         }
 
         public static void ReplaceMats()
         {
             JotunnLib.Logger.LogInfo("Material Replacer loaded succesfully");
-
             MaterialReplacer.GetAllMaterials();
-            //keep making like this below
+
             MaterialReplacer.ReplaceAllMaterialsWithOriginal(OdinArchitect.Create_wooden_gate_1_prefab);
         }
 

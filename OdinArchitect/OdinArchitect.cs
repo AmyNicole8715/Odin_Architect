@@ -349,7 +349,7 @@ namespace OdinArchitect
             OdinArchitectBundle.Unload(false);
         }
 
-        private void AddLocalizations()
+        private static void AddLocalizations()
         {
             LocalizationManager.Instance.AddLocalization(new LocalizationConfig("English")
             {

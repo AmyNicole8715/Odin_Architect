@@ -11,8 +11,7 @@ namespace OdinArchitect
         public static void Postfix()
         {
             JotunnLib.Logger.LogInfo("Material Replacer loaded succesfully");
-            MaterialReplacer.GetAllMaterials();
-            MaterialReplacer.ReplaceAllMaterialsWithOriginal();
+            OdinArchitect.ReplaceMats();
         }
     }
 
@@ -22,6 +21,7 @@ namespace OdinArchitect
         public static void Postfix()
         {
             JotunnLib.Logger.LogInfo("Material Replacer loaded succesfully");
+            OdinArchitect.ReplaceMats();
         }
     }
 

@@ -336,7 +336,6 @@ namespace OdinArchitect
             });
             // Piece end //
 
-
             // Piece Manager //
             // Buildings //
             PieceManager.Instance.AddPiece(Create_wooden_window_small);

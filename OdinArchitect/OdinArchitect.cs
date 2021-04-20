@@ -29,7 +29,6 @@ namespace OdinArchitect
 
         private void Awake()
         {
-       
             LoadAssets();
             CreateCustomPieces();
             AddLocalizations();
@@ -55,7 +54,6 @@ namespace OdinArchitect
                         new RequirementConfig { Item = "Wood", Amount = 24 },
                         new RequirementConfig { Item = "FineWood", Amount = 10 }
                     }});
-            MaterialReplacer.ReplaceAllMaterialsWithOriginal(Create_wooden_gate_1_prefab);
             // Piece end //
 
             // Piece: wooden_window_small //
@@ -479,8 +477,7 @@ namespace OdinArchitect
             JotunnLib.Logger.LogInfo("Material Replacer loaded succesfully");
 
             MaterialReplacer.GetAllMaterials();
-           //you need prefab in here MaterialReplacer.ReplaceAllMaterialsWithOriginal(Create_wooden_gate_1_prefab);
-
+            MaterialReplacer.ReplaceAllMaterialsWithOriginal(Create_wooden_gate_1_prefab);
         }
 
 #if DEBUG

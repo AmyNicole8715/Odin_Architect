@@ -25,7 +25,7 @@ namespace OdinArchitect
         public const string PluginVersion = "0.0.1";
         public static new JotunnLib.Logger Logger;
 
-        public AssetBundle OdinArchitectBundle;
+        public static AssetBundle OdinArchitectBundle;
 
         private void Awake()
         {

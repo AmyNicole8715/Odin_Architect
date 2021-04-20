@@ -27,6 +27,8 @@ namespace OdinArchitect
 
         public static AssetBundle OdinArchitectBundle;
 
+        public static GameObject Create_wooden_gate_1_prefab { get; private set; }
+
         private void Awake()
         {
             LoadAssets();
@@ -43,7 +45,9 @@ namespace OdinArchitect
         public static void CreateCustomPieces()
         {
             // Piece: wooden_gate_1 //
-            var Create_wooden_gate_1_prefab = OdinArchitectBundle.LoadAsset<GameObject>("wooden_gate_1");
+            // look at this change too
+            OdinArchitect.Create_wooden_gate_1_prefab = OdinArchitectBundle.LoadAsset<GameObject>("wooden_gate_1");
+            // here ^^
             var Create_wooden_gate_1 = new CustomPiece(Create_wooden_gate_1_prefab, new PieceConfig
                 {
                     PieceTable = "_HammerPieceTable",
@@ -478,7 +482,7 @@ namespace OdinArchitect
 
             MaterialReplacer.GetAllMaterials();
             //keep making like this below
-            MaterialReplacer.ReplaceAllMaterialsWithOriginal(OdinArchitectBundle.LoadAsset<GameObject>("wooden_window_small"));
+            MaterialReplacer.ReplaceAllMaterialsWithOriginal(OdinArchitect.Create_wooden_gate_1_prefab);
         }
 
 #if DEBUG

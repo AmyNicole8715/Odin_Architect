@@ -2,12 +2,16 @@
 using UnityEngine;
 using BepInEx.Configuration;
 using System;
+using System.Collections.Generic;
+using System.Reflection;
 using JotunnLib;
 using JotunnLib.Managers;
 using System.IO;
 using JotunnLib.Utils;
 using JotunnLib.Entities;
 using JotunnLib.Configs;
+using HarmonyLib;
+using Utils;
 
 namespace OdinArchitect
 {
@@ -25,37 +29,23 @@ namespace OdinArchitect
 
         private void Awake()
         {
+            LoadMaterialReplacer();
             LoadAssets();
-            // CreateOdinHammer();
             CreateCustomPieces();
             AddLocalizations();
+        }
+
+        private void LoadMaterialReplacer()
+        {
+            MaterialReplacer.GetAllMaterials();
+            JotunnLib.Logger.LogInfo("Material Replacer loaded succesfully");
         }
 
         private void LoadAssets()
         {
             OdinArchitectBundle = AssetUtils.LoadAssetBundle("OdinArchitect/Assets/odinarchitect");
-            JotunnLib.Logger.LogInfo(OdinArchitectBundle);
+            JotunnLib.Logger.LogInfo("Assets [" + OdinArchitectBundle + "] loaded succesfully");
         }
-
-        //  private void CreateOdinHammer()
-        //  {
-        //      // Create and add a custom item
-        //      var odin_hammer_prefab = OdinArchitectBundle.LoadAsset<GameObject>("odin_hammer");
-        //      var odin_hammer = new CustomItem(odin_hammer_prefab, fixReference: false,
-        //          new ItemConfig
-        //          {
-        //              Amount = 1,
-        //              CraftingStation = "piece_workbench",
-        //              Requirements = new[]
-        //              {
-        //                  new RequirementConfig { Item = "Wood", Amount = 8 },
-        //                  new RequirementConfig { Item = "Stone", Amount = 4 }
-        //              }
-        //          });
-        //      ItemManager.Instance.AddItem(odin_hammer);
-        //  
-        //      AddLocalizations();
-        //  }
 
         private void CreateCustomPieces()
         {
@@ -71,6 +61,7 @@ namespace OdinArchitect
                         new RequirementConfig { Item = "Wood", Amount = 24 },
                         new RequirementConfig { Item = "FineWood", Amount = 10 }
                     }});
+            MaterialReplacer.ReplaceAllMaterialsWithOriginal(Create_wooden_gate_1_prefab);
             // Piece end //
 
             // Piece: wooden_window_small //
@@ -486,6 +477,7 @@ namespace OdinArchitect
                         { "odin_hammer_desc", "Młot dzięki któremu wybudujesz unikatowe, wcześniej niedostępne elementy budownictwa" }
                     }
             });
+            JotunnLib.Logger.LogInfo("All pieces and localizations loaded succesfully");
         }
 
 #if DEBUG

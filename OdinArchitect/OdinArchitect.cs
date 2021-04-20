@@ -40,7 +40,7 @@ namespace OdinArchitect
             JotunnLib.Logger.LogInfo("Assets [" + OdinArchitectBundle + "] loaded succesfully");
         }
 
-        private void CreateCustomPieces()
+        public static void CreateCustomPieces()
         {
             // Piece: wooden_gate_1 //
             var Create_wooden_gate_1_prefab = OdinArchitectBundle.LoadAsset<GameObject>("wooden_gate_1");
@@ -477,7 +477,8 @@ namespace OdinArchitect
             JotunnLib.Logger.LogInfo("Material Replacer loaded succesfully");
 
             MaterialReplacer.GetAllMaterials();
-            MaterialReplacer.ReplaceAllMaterialsWithOriginal(Create_wooden_gate_1_prefab);
+            //keep making like this below
+            MaterialReplacer.ReplaceAllMaterialsWithOriginal(OdinArchitectBundle.LoadAsset<GameObject>("wooden_window_small"));
         }
 
 #if DEBUG

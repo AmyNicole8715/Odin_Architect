@@ -37,7 +37,7 @@ namespace OdinArchitect
         public static GameObject Create_wooden_fence_2_prefab { get; private set; }
         public static GameObject Create_wooden_fence_1_gate_prefab { get; private set; }
         public static GameObject Create_wooden_fence_2_gate_prefab { get; private set; }
-        public static GameObject Create_wooden_arch_0_prefab { get; private set; }
+        // public static GameObject Create_wooden_arch_0_prefab { get; private set; }
         public static GameObject Create_wooden_arch_1_prefab { get; private set; }
         public static GameObject Create_refined_stakewall_1_prefab { get; private set; }
         public static GameObject Create_refined_sharpstakes_prefab { get; private set; }
@@ -217,19 +217,19 @@ namespace OdinArchitect
             // Piece end //
 
             // Piece: wooden_arch_0 //
-            OdinArchitect.Create_wooden_arch_0_prefab = OdinArchitectBundle.LoadAsset<GameObject>("wooden_arch_0");
-            var Create_wooden_arch_0 = new CustomPiece(Create_wooden_arch_0_prefab, new PieceConfig
-            {
-                PieceTable = "_HammerPieceTable",
-                AllowedInDungeons = true,
-                CraftingStation = "piece_workbench",
-                Requirements = new[]
-                    {
-                        new RequirementConfig { Item = "Wood", Amount = 30 },
-                        new RequirementConfig { Item = "RoundLog", Amount = 14 },
-                        new RequirementConfig { Item = "Iron", Amount = 10 }
-                    }
-            });
+            // OdinArchitect.Create_wooden_arch_0_prefab = OdinArchitectBundle.LoadAsset<GameObject>("wooden_arch_0");
+            // var Create_wooden_arch_0 = new CustomPiece(Create_wooden_arch_0_prefab, new PieceConfig
+            // {
+            //     PieceTable = "_HammerPieceTable",
+            //     AllowedInDungeons = true,
+            //     CraftingStation = "piece_workbench",
+            //     Requirements = new[]
+            //         {
+            //             new RequirementConfig { Item = "Wood", Amount = 30 },
+            //             new RequirementConfig { Item = "RoundLog", Amount = 14 },
+            //             new RequirementConfig { Item = "Iron", Amount = 10 }
+            //         }
+            // });
             // Piece end //
 
             // Piece: wooden_arch_1 //
@@ -356,7 +356,7 @@ namespace OdinArchitect
             PieceManager.Instance.AddPiece(Create_refined_sharpstakes);
             PieceManager.Instance.AddPiece(Create_wooden_gate_1);
             PieceManager.Instance.AddPiece(Create_wooden_arch_1);
-            PieceManager.Instance.AddPiece(Create_wooden_arch_0);
+            // PieceManager.Instance.AddPiece(Create_wooden_arch_0);
 
             // Furnitures //
             PieceManager.Instance.AddPiece(Create_surtling_lantern_1);

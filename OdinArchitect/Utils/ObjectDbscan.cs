@@ -10,7 +10,7 @@ namespace OdinArchitect
     {
         public static void Postfix()
         {
-            JotunnLib.Logger.LogInfo("Material Replacer loaded succesfully");
+            // JotunnLib.Logger.LogInfo("Material Replacer loaded succesfully");
             OdinArchitect.ReplaceMats();
         }
     }
@@ -20,7 +20,7 @@ namespace OdinArchitect
     {
         public static void Postfix()
         {
-            JotunnLib.Logger.LogInfo("Material Replacer loaded succesfully");
+            // JotunnLib.Logger.LogInfo("Material Replacer loaded succesfully");
             OdinArchitect.ReplaceMats();
         }
     }

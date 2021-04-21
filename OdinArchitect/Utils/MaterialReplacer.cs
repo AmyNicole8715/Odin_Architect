@@ -41,7 +41,6 @@ namespace OdinArchitect
                         else
                         {
                             JotunnLib.Logger.LogInfo("Error: No suitable material found to replace: " + matName);
-
                             originalMaterials[matName] = renderer.material;
                         }
                     }

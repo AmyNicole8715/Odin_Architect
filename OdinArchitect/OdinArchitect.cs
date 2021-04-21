@@ -27,6 +27,24 @@ namespace OdinArchitect
         public static AssetBundle OdinArchitectBundle;
 
         public static GameObject Create_wooden_gate_1_prefab { get; private set; }
+        public static GameObject Create_wooden_window_small_prefab { get; private set; }
+        public static GameObject Create_wooden_window_big_prefab { get; private set; }
+        public static GameObject Create_thin_wood_beam_1_prefab { get; private set; }
+        public static GameObject Create_thin_wood_beam_2_prefab { get; private set; }
+        public static GameObject Create_thin_wood_pole_1_prefab { get; private set; }
+        public static GameObject Create_thin_wood_pole_2_prefab { get; private set; }
+        public static GameObject Create_wooden_fence_1_prefab { get; private set; }
+        public static GameObject Create_wooden_fence_2_prefab { get; private set; }
+        public static GameObject Create_wooden_fence_1_gate_prefab { get; private set; }
+        public static GameObject Create_wooden_fence_2_gate_prefab { get; private set; }
+        public static GameObject Create_wooden_arch_0_prefab { get; private set; }
+        public static GameObject Create_wooden_arch_1_prefab { get; private set; }
+        public static GameObject Create_refined_stakewall_1_prefab { get; private set; }
+        public static GameObject Create_refined_sharpstakes_prefab { get; private set; }
+        public static GameObject Create_surtling_lantern_1_prefab { get; private set; }
+        public static GameObject Create_surtling_lantern_2_prefab { get; private set; }
+        public static GameObject Create_surtling_lantern_3_prefab { get; private set; }
+        public static GameObject Create_surtling_lantern_4_prefab { get; private set; }
 
         private void Awake()
         {
@@ -60,7 +78,7 @@ namespace OdinArchitect
             // Piece end //
 
             // Piece: wooden_window_small //
-            var Create_wooden_window_small_prefab = OdinArchitectBundle.LoadAsset<GameObject>("wooden_window_small");
+            OdinArchitect.Create_wooden_window_small_prefab = OdinArchitectBundle.LoadAsset<GameObject>("wooden_window_small");
             var Create_wooden_window_small = new CustomPiece(Create_wooden_window_small_prefab, new PieceConfig
                 {
                     PieceTable = "_HammerPieceTable",
@@ -73,7 +91,7 @@ namespace OdinArchitect
             // Piece end //
 
             // Piece: wooden_window_big //
-            var Create_wooden_window_big_prefab = OdinArchitectBundle.LoadAsset<GameObject>("wooden_window_big");
+            OdinArchitect.Create_wooden_window_big_prefab = OdinArchitectBundle.LoadAsset<GameObject>("wooden_window_big");
             var Create_wooden_window_big = new CustomPiece(Create_wooden_window_big_prefab, new PieceConfig
             {
                 PieceTable = "_HammerPieceTable",
@@ -87,7 +105,7 @@ namespace OdinArchitect
             // Piece end //
 
             // Piece: thin_wood_beam_1 //
-            var Create_thin_wood_beam_1_prefab = OdinArchitectBundle.LoadAsset<GameObject>("thin_wood_beam_1");
+            OdinArchitect.Create_thin_wood_beam_1_prefab = OdinArchitectBundle.LoadAsset<GameObject>("thin_wood_beam_1");
             var Create_thin_wood_beam_1 = new CustomPiece(Create_thin_wood_beam_1_prefab, new PieceConfig
             {
                 PieceTable = "_HammerPieceTable",
@@ -101,7 +119,7 @@ namespace OdinArchitect
             // Piece end //
 
             // Piece: thin_wood_beam_2 //
-            var Create_thin_wood_beam_2_prefab = OdinArchitectBundle.LoadAsset<GameObject>("thin_wood_beam_2");
+            OdinArchitect.Create_thin_wood_beam_2_prefab = OdinArchitectBundle.LoadAsset<GameObject>("thin_wood_beam_2");
             var Create_thin_wood_beam_2 = new CustomPiece(Create_thin_wood_beam_2_prefab, new PieceConfig
             {
                 PieceTable = "_HammerPieceTable",
@@ -115,7 +133,7 @@ namespace OdinArchitect
             // Piece end //
 
             // Piece: thin_wood_pole_1 //
-            var Create_thin_wood_pole_1_prefab = OdinArchitectBundle.LoadAsset<GameObject>("thin_wood_pole_1");
+            OdinArchitect.Create_thin_wood_pole_1_prefab = OdinArchitectBundle.LoadAsset<GameObject>("thin_wood_pole_1");
             var Create_thin_wood_pole_1 = new CustomPiece(Create_thin_wood_pole_1_prefab, new PieceConfig
             {
                 PieceTable = "_HammerPieceTable",
@@ -129,7 +147,7 @@ namespace OdinArchitect
             // Piece end //
 
             // Piece: thin_wood_pole_2 //
-            var Create_thin_wood_pole_2_prefab = OdinArchitectBundle.LoadAsset<GameObject>("thin_wood_pole_2");
+            OdinArchitect.Create_thin_wood_pole_2_prefab = OdinArchitectBundle.LoadAsset<GameObject>("thin_wood_pole_2");
             var Create_thin_wood_pole_2 = new CustomPiece(Create_thin_wood_pole_2_prefab, new PieceConfig
             {
                 PieceTable = "_HammerPieceTable",
@@ -143,7 +161,7 @@ namespace OdinArchitect
             // Piece end //
 
             // Piece: wooden_fence_1 //
-            var Create_wooden_fence_1_prefab = OdinArchitectBundle.LoadAsset<GameObject>("wooden_fence_1");
+            OdinArchitect.Create_wooden_fence_1_prefab = OdinArchitectBundle.LoadAsset<GameObject>("wooden_fence_1");
             var Create_wooden_fence_1 = new CustomPiece(Create_wooden_fence_1_prefab, new PieceConfig
             {
                 PieceTable = "_HammerPieceTable",
@@ -157,7 +175,7 @@ namespace OdinArchitect
             // Piece end //
 
             // Piece: wooden_fence_2 //
-            var Create_wooden_fence_2_prefab = OdinArchitectBundle.LoadAsset<GameObject>("wooden_fence_2");
+            OdinArchitect.Create_wooden_fence_2_prefab = OdinArchitectBundle.LoadAsset<GameObject>("wooden_fence_2");
             var Create_wooden_fence_2 = new CustomPiece(Create_wooden_fence_2_prefab, new PieceConfig
             {
                 PieceTable = "_HammerPieceTable",
@@ -171,7 +189,7 @@ namespace OdinArchitect
             // Piece end //
 
             // Piece: wooden_fence_1_gate //
-            var Create_wooden_fence_1_gate_prefab = OdinArchitectBundle.LoadAsset<GameObject>("wooden_fence_1_gate");
+            OdinArchitect.Create_wooden_fence_1_gate_prefab = OdinArchitectBundle.LoadAsset<GameObject>("wooden_fence_1_gate");
             var Create_wooden_fence_1_gate = new CustomPiece(Create_wooden_fence_1_gate_prefab, new PieceConfig
             {
                 PieceTable = "_HammerPieceTable",
@@ -185,7 +203,7 @@ namespace OdinArchitect
             // Piece end //
 
             // Piece: wooden_fence_2_gate //
-            var Create_wooden_fence_2_gate_prefab = OdinArchitectBundle.LoadAsset<GameObject>("wooden_fence_2_gate");
+            OdinArchitect.Create_wooden_fence_2_gate_prefab = OdinArchitectBundle.LoadAsset<GameObject>("wooden_fence_2_gate");
             var Create_wooden_fence_2_gate = new CustomPiece(Create_wooden_fence_2_gate_prefab, new PieceConfig
             {
                 PieceTable = "_HammerPieceTable",
@@ -199,7 +217,7 @@ namespace OdinArchitect
             // Piece end //
 
             // Piece: wooden_arch_0 //
-            var Create_wooden_arch_0_prefab = OdinArchitectBundle.LoadAsset<GameObject>("wooden_arch_0");
+            OdinArchitect.Create_wooden_arch_0_prefab = OdinArchitectBundle.LoadAsset<GameObject>("wooden_arch_0");
             var Create_wooden_arch_0 = new CustomPiece(Create_wooden_arch_0_prefab, new PieceConfig
             {
                 PieceTable = "_HammerPieceTable",
@@ -215,7 +233,7 @@ namespace OdinArchitect
             // Piece end //
 
             // Piece: wooden_arch_1 //
-            var Create_wooden_arch_1_prefab = OdinArchitectBundle.LoadAsset<GameObject>("wooden_arch_1");
+            OdinArchitect.Create_wooden_arch_1_prefab = OdinArchitectBundle.LoadAsset<GameObject>("wooden_arch_1");
             var Create_wooden_arch_1 = new CustomPiece(Create_wooden_arch_1_prefab, new PieceConfig
             {
                 PieceTable = "_HammerPieceTable",
@@ -230,7 +248,7 @@ namespace OdinArchitect
             // Piece end //
 
             // Piece: refined_stakewall_1 //
-            var Create_refined_stakewall_1_prefab = OdinArchitectBundle.LoadAsset<GameObject>("refined_stakewall_1");
+            OdinArchitect.Create_refined_stakewall_1_prefab = OdinArchitectBundle.LoadAsset<GameObject>("refined_stakewall_1");
             var Create_refined_stakewall_1 = new CustomPiece(Create_refined_stakewall_1_prefab, new PieceConfig
             {
                 PieceTable = "_HammerPieceTable",
@@ -245,7 +263,7 @@ namespace OdinArchitect
             // Piece end //
 
             // Piece: refined_sharpstakes //
-            var Create_refined_sharpstakes_prefab = OdinArchitectBundle.LoadAsset<GameObject>("refined_sharpstakes");
+            OdinArchitect.Create_refined_sharpstakes_prefab = OdinArchitectBundle.LoadAsset<GameObject>("refined_sharpstakes");
             var Create_refined_sharpstakes = new CustomPiece(Create_refined_sharpstakes_prefab, new PieceConfig
             {
                 PieceTable = "_HammerPieceTable",
@@ -260,7 +278,7 @@ namespace OdinArchitect
             // Piece end //
 
             // Piece: surtling_lantern_1 //
-            var Create_surtling_lantern_1_prefab = OdinArchitectBundle.LoadAsset<GameObject>("surtling_lantern_1");
+            OdinArchitect.Create_surtling_lantern_1_prefab = OdinArchitectBundle.LoadAsset<GameObject>("surtling_lantern_1");
             var Create_surtling_lantern_1 = new CustomPiece(Create_surtling_lantern_1_prefab, new PieceConfig
             {
                 PieceTable = "_HammerPieceTable",
@@ -275,7 +293,7 @@ namespace OdinArchitect
             // Piece end //
 
             // Piece: surtling_lantern_2 //
-            var Create_surtling_lantern_2_prefab = OdinArchitectBundle.LoadAsset<GameObject>("surtling_lantern_2");
+            OdinArchitect.Create_surtling_lantern_2_prefab = OdinArchitectBundle.LoadAsset<GameObject>("surtling_lantern_2");
             var Create_surtling_lantern_2 = new CustomPiece(Create_surtling_lantern_2_prefab, new PieceConfig
             {
                 PieceTable = "_HammerPieceTable",
@@ -291,7 +309,7 @@ namespace OdinArchitect
             // Piece end //
 
             // Piece: surtling_lantern_3 //
-            var Create_surtling_lantern_3_prefab = OdinArchitectBundle.LoadAsset<GameObject>("surtling_lantern_3");
+            OdinArchitect.Create_surtling_lantern_3_prefab = OdinArchitectBundle.LoadAsset<GameObject>("surtling_lantern_3");
             var Create_surtling_lantern_3 = new CustomPiece(Create_surtling_lantern_3_prefab, new PieceConfig
             {
                 PieceTable = "_HammerPieceTable",
@@ -307,7 +325,7 @@ namespace OdinArchitect
             // Piece end //
 
             // Piece: surtling_lantern_4 //
-            var Create_surtling_lantern_4_prefab = OdinArchitectBundle.LoadAsset<GameObject>("surtling_lantern_4");
+            OdinArchitect.Create_surtling_lantern_4_prefab = OdinArchitectBundle.LoadAsset<GameObject>("surtling_lantern_4");
             var Create_surtling_lantern_4 = new CustomPiece(Create_surtling_lantern_4_prefab, new PieceConfig
             {
                 PieceTable = "_HammerPieceTable",
@@ -359,6 +377,25 @@ namespace OdinArchitect
 
             // Prefabs - GameObjects for MaterialReplacer //
             MaterialReplacer.ReplaceAllMaterialsWithOriginal(OdinArchitect.Create_wooden_gate_1_prefab);
+            MaterialReplacer.ReplaceAllMaterialsWithOriginal(OdinArchitect.Create_wooden_gate_1_prefab);
+            MaterialReplacer.ReplaceAllMaterialsWithOriginal(OdinArchitect.Create_wooden_window_small_prefab);
+            MaterialReplacer.ReplaceAllMaterialsWithOriginal(OdinArchitect.Create_wooden_window_big_prefab);
+            MaterialReplacer.ReplaceAllMaterialsWithOriginal(OdinArchitect.Create_thin_wood_beam_1_prefab);
+            MaterialReplacer.ReplaceAllMaterialsWithOriginal(OdinArchitect.Create_thin_wood_beam_2_prefab);
+            MaterialReplacer.ReplaceAllMaterialsWithOriginal(OdinArchitect.Create_thin_wood_pole_1_prefab);
+            MaterialReplacer.ReplaceAllMaterialsWithOriginal(OdinArchitect.Create_thin_wood_pole_2_prefab);
+            MaterialReplacer.ReplaceAllMaterialsWithOriginal(OdinArchitect.Create_wooden_fence_1_prefab);
+            MaterialReplacer.ReplaceAllMaterialsWithOriginal(OdinArchitect.Create_wooden_fence_2_prefab);
+            MaterialReplacer.ReplaceAllMaterialsWithOriginal(OdinArchitect.Create_wooden_fence_1_gate_prefab);
+            MaterialReplacer.ReplaceAllMaterialsWithOriginal(OdinArchitect.Create_wooden_fence_2_gate_prefab);
+            MaterialReplacer.ReplaceAllMaterialsWithOriginal(OdinArchitect.Create_wooden_arch_0_prefab);
+            MaterialReplacer.ReplaceAllMaterialsWithOriginal(OdinArchitect.Create_wooden_arch_1_prefab);
+            MaterialReplacer.ReplaceAllMaterialsWithOriginal(OdinArchitect.Create_refined_stakewall_1_prefab);
+            MaterialReplacer.ReplaceAllMaterialsWithOriginal(OdinArchitect.Create_refined_sharpstakes_prefab);
+            MaterialReplacer.ReplaceAllMaterialsWithOriginal(OdinArchitect.Create_surtling_lantern_1_prefab);
+            MaterialReplacer.ReplaceAllMaterialsWithOriginal(OdinArchitect.Create_surtling_lantern_2_prefab);
+            MaterialReplacer.ReplaceAllMaterialsWithOriginal(OdinArchitect.Create_surtling_lantern_3_prefab);
+            MaterialReplacer.ReplaceAllMaterialsWithOriginal(OdinArchitect.Create_surtling_lantern_4_prefab);
         }
 
         private static void AddLocalizations()

@@ -1,6 +1,6 @@
 ﻿using HarmonyLib;
 using OdinArchitect;
-using JotunnLib;
+using Jotunn;
 using UnityEngine;
 
 namespace OdinArchitect

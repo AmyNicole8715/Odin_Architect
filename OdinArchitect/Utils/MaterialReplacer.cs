@@ -40,7 +40,12 @@ namespace OdinArchitect
                         }
                         else
                         {
+<<<<<<< Updated upstream
                             JotunnLib.Logger.LogInfo("Error: No suitable material found to replace: " + matName);
+=======
+                            Jotunn.Logger.LogInfo("Error: No suitable material found to replace: " + matName);
+
+>>>>>>> Stashed changes
                             originalMaterials[matName] = renderer.material;
                         }
                     }

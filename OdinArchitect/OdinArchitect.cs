@@ -4,31 +4,32 @@ using BepInEx.Configuration;
 using System;
 using System.Collections.Generic;
 using System.Reflection;
-using JotunnLib;
-using JotunnLib.Managers;
+using Jotunn;
+using Jotunn.Managers;
 using System.IO;
-using JotunnLib.Utils;
-using JotunnLib.Entities;
-using JotunnLib.Configs;
+using Jotunn.Utils;
+using Jotunn.Entities;
+using Jotunn.Configs;
 using HarmonyLib;
 
 namespace OdinArchitect
 {
     [BepInPlugin(PluginGUID, PluginName, PluginVersion)]
-    [BepInDependency(JotunnLib.Main.ModGuid)]
+    [BepInDependency(Jotunn.Main.ModGuid)]
     //[NetworkCompatibilty(CompatibilityLevel.EveryoneMustHaveMod, VersionStrictness.Minor)]
     internal class OdinArchitect : BaseUnityPlugin
     {
         public const string PluginGUID = "com.raelaziel";
         public const string PluginName = "OdinArchitect";
         public const string PluginVersion = "0.0.1";
-        public static new JotunnLib.Logger Logger;
+        public static new Jotunn.Logger Logger;
 
         public static AssetBundle OdinArchitectBundle;
 
         public static GameObject Create_wooden_gate_1_prefab { get; private set; }
         public static GameObject Create_wooden_window_small_prefab { get; private set; }
         public static GameObject Create_wooden_window_big_prefab { get; private set; }
+<<<<<<< Updated upstream
         public static GameObject Create_thin_wood_beam_1_prefab { get; private set; }
         public static GameObject Create_thin_wood_beam_2_prefab { get; private set; }
         public static GameObject Create_thin_wood_pole_1_prefab { get; private set; }
@@ -45,6 +46,25 @@ namespace OdinArchitect
         public static GameObject Create_surtling_lantern_2_prefab { get; private set; }
         public static GameObject Create_surtling_lantern_3_prefab { get; private set; }
         public static GameObject Create_surtling_lantern_4_prefab { get; private set; }
+=======
+        public static GameObject Create_thin_wood_beam_2_prefab { get; private set; }
+        public static GameObject Create_thin_wood_beam_1_prefab { get; private set; }
+        public static GameObject Create_thin_wood_pole_1_prefab { get; private set; }
+        public static GameObject Create_thin_wood_pole_2_prefab { get; private set; }
+        public static GameObject Create_wooden_fence_1_prefab { get; private set; }
+        public static GameObject Create_wooden_fence_1_gate_prefab { get; private set; }
+        public static GameObject Create_wooden_fence_2_prefab { get; private set; }
+        public static GameObject Create_wooden_fence_2_gate_prefab { get; private set; }
+        public static GameObject Create_refined_stakewall_1_prefab { get; private set; }
+        public static GameObject Create_refined_sharpstakes_prefab { get; private set; }
+        public static GameObject Create_wooden_arch_1_prefab { get; private set; }
+        public static GameObject Create_surtling_lantern_2_prefab { get; private set; }
+        public static GameObject Create_surtling_lantern_1_prefab { get; private set; }
+        public static GameObject Create_surtling_lantern_3_prefab { get; private set; }
+        public static GameObject Create_surtling_lantern_4_prefab { get; private set; }
+        public static GameObject Create_stone_window_small_prefab { get; private set; }
+        public static GameObject Create_stone_window_big_prefab { get; private set; }
+>>>>>>> Stashed changes
 
         private void Awake()
         {
@@ -56,7 +76,7 @@ namespace OdinArchitect
         private void LoadAssets()
         {
             OdinArchitectBundle = AssetUtils.LoadAssetBundle("OdinArchitect/Assets/odinarchitect");
-            JotunnLib.Logger.LogInfo("Assets [" + OdinArchitectBundle + "] loaded succesfully");
+            Jotunn.Logger.LogInfo("Assets [" + OdinArchitectBundle + "] loaded succesfully");
         }
 
         public static void CreateCustomPieces()
@@ -217,6 +237,7 @@ namespace OdinArchitect
             // Piece end //
 
             // Piece: wooden_arch_0 //
+<<<<<<< Updated upstream
             // OdinArchitect.Create_wooden_arch_0_prefab = OdinArchitectBundle.LoadAsset<GameObject>("wooden_arch_0");
             // var Create_wooden_arch_0 = new CustomPiece(Create_wooden_arch_0_prefab, new PieceConfig
             // {
@@ -230,6 +251,21 @@ namespace OdinArchitect
             //             new RequirementConfig { Item = "Iron", Amount = 10 }
             //         }
             // });
+=======
+            //  var Create_wooden_arch_0_prefab = OdinArchitectBundle.LoadAsset<GameObject>("wooden_arch_0");
+            //  var Create_wooden_arch_0 = new CustomPiece(Create_wooden_arch_0_prefab, new PieceConfig
+            //  {
+            //      PieceTable = "_HammerPieceTable",
+            //      AllowedInDungeons = true,
+            //      CraftingStation = "piece_workbench",
+            //      Requirements = new[]
+            //          {
+            //              new RequirementConfig { Item = "Wood", Amount = 30 },
+            //              new RequirementConfig { Item = "RoundLog", Amount = 14 },
+            //              new RequirementConfig { Item = "Iron", Amount = 10 }
+            //          }
+            //  });
+>>>>>>> Stashed changes
             // Piece end //
 
             // Piece: wooden_arch_1 //
@@ -340,6 +376,36 @@ namespace OdinArchitect
             });
             // Piece end //
 
+            // Piece: stone_window_small //
+            OdinArchitect.Create_stone_window_small_prefab = OdinArchitectBundle.LoadAsset<GameObject>("stone_window_small");
+            var Create_stone_window_small = new CustomPiece(Create_stone_window_small_prefab, new PieceConfig
+            {
+                PieceTable = "_HammerPieceTable",
+                AllowedInDungeons = true,
+                CraftingStation = "piece_workbench",
+                Requirements = new[]
+                    {
+                        new RequirementConfig { Item = "Stone", Amount = 6 },
+                        new RequirementConfig { Item = "Wood", Amount = 4 }
+                    }
+            });
+            // Piece end //
+
+            // Piece: stone_window_big //
+            OdinArchitect.Create_stone_window_big_prefab = OdinArchitectBundle.LoadAsset<GameObject>("stone_window_big");
+            var Create_stone_window_big = new CustomPiece(Create_stone_window_big_prefab, new PieceConfig
+            {
+                PieceTable = "_HammerPieceTable",
+                AllowedInDungeons = true,
+                CraftingStation = "piece_workbench",
+                Requirements = new[]
+                    {
+                        new RequirementConfig { Item = "Stone", Amount = 12 },
+                        new RequirementConfig { Item = "Wood", Amount = 6 }
+                    }
+            });
+            // Piece end //
+
             // Piece Manager //
             // Buildings //
             PieceManager.Instance.AddPiece(Create_wooden_window_small);
@@ -356,6 +422,11 @@ namespace OdinArchitect
             PieceManager.Instance.AddPiece(Create_refined_sharpstakes);
             PieceManager.Instance.AddPiece(Create_wooden_gate_1);
             PieceManager.Instance.AddPiece(Create_wooden_arch_1);
+<<<<<<< Updated upstream
+=======
+            PieceManager.Instance.AddPiece(Create_stone_window_small);
+            PieceManager.Instance.AddPiece(Create_stone_window_big);
+>>>>>>> Stashed changes
             // PieceManager.Instance.AddPiece(Create_wooden_arch_0);
 
             // Furnitures //
@@ -372,11 +443,12 @@ namespace OdinArchitect
 
         public static void ReplaceMats()
         {
-            JotunnLib.Logger.LogInfo("Material Replacer loaded succesfully");
+            Jotunn.Logger.LogInfo("Material Replacer loaded succesfully");
             MaterialReplacer.GetAllMaterials();
 
             // Prefabs - GameObjects for MaterialReplacer //
             MaterialReplacer.ReplaceAllMaterialsWithOriginal(OdinArchitect.Create_wooden_gate_1_prefab);
+<<<<<<< Updated upstream
             MaterialReplacer.ReplaceAllMaterialsWithOriginal(OdinArchitect.Create_wooden_gate_1_prefab);
             MaterialReplacer.ReplaceAllMaterialsWithOriginal(OdinArchitect.Create_wooden_window_small_prefab);
             MaterialReplacer.ReplaceAllMaterialsWithOriginal(OdinArchitect.Create_wooden_window_big_prefab);
@@ -392,10 +464,30 @@ namespace OdinArchitect
             MaterialReplacer.ReplaceAllMaterialsWithOriginal(OdinArchitect.Create_wooden_arch_1_prefab);
             MaterialReplacer.ReplaceAllMaterialsWithOriginal(OdinArchitect.Create_refined_stakewall_1_prefab);
             MaterialReplacer.ReplaceAllMaterialsWithOriginal(OdinArchitect.Create_refined_sharpstakes_prefab);
+=======
+            MaterialReplacer.ReplaceAllMaterialsWithOriginal(OdinArchitect.Create_wooden_window_small_prefab);
+            MaterialReplacer.ReplaceAllMaterialsWithOriginal(OdinArchitect.Create_wooden_window_big_prefab);
+            MaterialReplacer.ReplaceAllMaterialsWithOriginal(OdinArchitect.Create_thin_wood_beam_2_prefab);
+            MaterialReplacer.ReplaceAllMaterialsWithOriginal(OdinArchitect.Create_thin_wood_beam_1_prefab);
+            MaterialReplacer.ReplaceAllMaterialsWithOriginal(OdinArchitect.Create_thin_wood_pole_1_prefab);
+            MaterialReplacer.ReplaceAllMaterialsWithOriginal(OdinArchitect.Create_thin_wood_pole_2_prefab);
+            MaterialReplacer.ReplaceAllMaterialsWithOriginal(OdinArchitect.Create_wooden_fence_1_prefab);
+            MaterialReplacer.ReplaceAllMaterialsWithOriginal(OdinArchitect.Create_wooden_fence_1_gate_prefab);
+            MaterialReplacer.ReplaceAllMaterialsWithOriginal(OdinArchitect.Create_wooden_fence_2_prefab);
+            MaterialReplacer.ReplaceAllMaterialsWithOriginal(OdinArchitect.Create_wooden_fence_2_gate_prefab);
+            MaterialReplacer.ReplaceAllMaterialsWithOriginal(OdinArchitect.Create_refined_stakewall_1_prefab);
+            MaterialReplacer.ReplaceAllMaterialsWithOriginal(OdinArchitect.Create_refined_sharpstakes_prefab);
+            MaterialReplacer.ReplaceAllMaterialsWithOriginal(OdinArchitect.Create_wooden_arch_1_prefab);
+>>>>>>> Stashed changes
             MaterialReplacer.ReplaceAllMaterialsWithOriginal(OdinArchitect.Create_surtling_lantern_1_prefab);
             MaterialReplacer.ReplaceAllMaterialsWithOriginal(OdinArchitect.Create_surtling_lantern_2_prefab);
             MaterialReplacer.ReplaceAllMaterialsWithOriginal(OdinArchitect.Create_surtling_lantern_3_prefab);
             MaterialReplacer.ReplaceAllMaterialsWithOriginal(OdinArchitect.Create_surtling_lantern_4_prefab);
+<<<<<<< Updated upstream
+=======
+            MaterialReplacer.ReplaceAllMaterialsWithOriginal(OdinArchitect.Create_stone_window_small_prefab);
+            MaterialReplacer.ReplaceAllMaterialsWithOriginal(OdinArchitect.Create_stone_window_big_prefab);
+>>>>>>> Stashed changes
         }
 
         private static void AddLocalizations()

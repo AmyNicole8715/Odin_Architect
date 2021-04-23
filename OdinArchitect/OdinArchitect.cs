@@ -46,6 +46,9 @@ namespace OdinArchitect
         public static GameObject Create_surtling_lantern_4_prefab { get; private set; }
         public static GameObject Create_stone_window_small_prefab { get; private set; }
         public static GameObject Create_stone_window_big_prefab { get; private set; }
+        public static GameObject Create_iron_gate_small_prefab { get; private set; }
+        public static GameObject Create_iron_gate_big_prefab { get; private set; }
+        public static GameObject Create_iron_dragon_prefab { get; private set; }
 
         private void Awake()
         {
@@ -355,6 +358,48 @@ namespace OdinArchitect
             });
             // Piece end //
 
+            // Piece: iron_gate_small //
+            OdinArchitect.Create_iron_gate_small_prefab = OdinArchitectBundle.LoadAsset<GameObject>("iron_gate_small");
+            var Create_iron_gate_small = new CustomPiece(Create_iron_gate_small_prefab, new PieceConfig
+            {
+                PieceTable = "_HammerPieceTable",
+                AllowedInDungeons = true,
+                CraftingStation = "piece_workbench",
+                Requirements = new[]
+                    {
+                        new RequirementConfig { Item = "Iron", Amount = 4 }
+                    }
+            });
+            // Piece end //
+
+            // Piece: iron_gate_small //
+            OdinArchitect.Create_iron_gate_big_prefab = OdinArchitectBundle.LoadAsset<GameObject>("iron_gate_big");
+            var Create_iron_gate_big = new CustomPiece(Create_iron_gate_big_prefab, new PieceConfig
+            {
+                PieceTable = "_HammerPieceTable",
+                AllowedInDungeons = true,
+                CraftingStation = "piece_workbench",
+                Requirements = new[]
+                    {
+                        new RequirementConfig { Item = "Iron", Amount = 12 }
+                    }
+            });
+            // Piece end //
+
+            // Piece: iron_dragon //
+            OdinArchitect.Create_iron_dragon_prefab = OdinArchitectBundle.LoadAsset<GameObject>("iron_dragon");
+            var Create_iron_dragon = new CustomPiece(Create_iron_dragon_prefab, new PieceConfig
+            {
+                PieceTable = "_HammerPieceTable",
+                AllowedInDungeons = true,
+                CraftingStation = "piece_workbench",
+                Requirements = new[]
+                    {
+                        new RequirementConfig { Item = "Iron", Amount = 24 }
+                    }
+            });
+            // Piece end //
+
             // Piece Manager //
             // Buildings //
             PieceManager.Instance.AddPiece(Create_wooden_window_small);
@@ -373,6 +418,9 @@ namespace OdinArchitect
             PieceManager.Instance.AddPiece(Create_wooden_arch_1);
             PieceManager.Instance.AddPiece(Create_stone_window_small);
             PieceManager.Instance.AddPiece(Create_stone_window_big);
+            PieceManager.Instance.AddPiece(Create_iron_gate_small);
+            PieceManager.Instance.AddPiece(Create_iron_gate_big);
+            PieceManager.Instance.AddPiece(Create_iron_dragon);
 
             // Furnitures //
             PieceManager.Instance.AddPiece(Create_surtling_lantern_1);
@@ -412,6 +460,9 @@ namespace OdinArchitect
             MaterialReplacer.ReplaceAllMaterialsWithOriginal(OdinArchitect.Create_surtling_lantern_4_prefab);
             MaterialReplacer.ReplaceAllMaterialsWithOriginal(OdinArchitect.Create_stone_window_small_prefab);
             MaterialReplacer.ReplaceAllMaterialsWithOriginal(OdinArchitect.Create_stone_window_big_prefab);
+            MaterialReplacer.ReplaceAllMaterialsWithOriginal(OdinArchitect.Create_iron_gate_small_prefab);
+            MaterialReplacer.ReplaceAllMaterialsWithOriginal(OdinArchitect.Create_iron_gate_big_prefab);
+            MaterialReplacer.ReplaceAllMaterialsWithOriginal(OdinArchitect.Create_iron_dragon_prefab);
         }
 
         private static void AddLocalizations()

@@ -49,6 +49,19 @@ namespace OdinArchitect
         public static GameObject Create_iron_gate_small_prefab { get; private set; }
         public static GameObject Create_iron_gate_big_prefab { get; private set; }
         public static GameObject Create_iron_dragon_prefab { get; private set; }
+        public static GameObject Create_big_pillar_prefab { get; private set; }
+        public static GameObject Create_stonewall_hardrock_1x1_prefab { get; private set; }
+        public static GameObject Create_stonewall_hardrock_2x1_prefab { get; private set; }
+        public static GameObject Create_stonewall_hardrock_4x2_prefab { get; private set; }
+        public static GameObject Create_stonewall_hardrock_arch_prefab { get; private set; }
+        public static GameObject Create_stonewall_hardrock_pillar_prefab { get; private set; }
+        public static GameObject Create_stonewall_hardrock_stairs_prefab { get; private set; }
+        public static GameObject Create_stone_arch_1_prefab { get; private set; }
+        public static GameObject Create_stone_table_1_prefab { get; private set; }
+        public static GameObject Create_stone_floor_1_new_prefab { get; private set; }
+        public static GameObject Create_stone_arch_2_small_prefab { get; private set; }
+        public static GameObject Create_thin_wood_beam_26_long_prefab { get; private set; }
+        public static GameObject Create_thin_wood_beam_26_short_prefab { get; private set; }
 
         private void Awake()
         {
@@ -400,6 +413,188 @@ namespace OdinArchitect
             });
             // Piece end //
 
+            // Piece: big_pillar //
+            OdinArchitect.Create_big_pillar_prefab = OdinArchitectBundle.LoadAsset<GameObject>("big_pillar");
+            var Create_big_pillar = new CustomPiece(Create_big_pillar_prefab, new PieceConfig
+            {
+                PieceTable = "_HammerPieceTable",
+                AllowedInDungeons = true,
+                CraftingStation = "piece_workbench",
+                Requirements = new[]
+                    {
+                        new RequirementConfig { Item = "Stone", Amount = 24 }
+                    }
+            });
+            // Piece end //
+
+            // Piece: stonewall_hardrock_1x1 //
+            OdinArchitect.Create_stonewall_hardrock_1x1_prefab = OdinArchitectBundle.LoadAsset<GameObject>("stonewall_hardrock_1x1");
+            var Create_stonewall_hardrock_1x1 = new CustomPiece(Create_stonewall_hardrock_1x1_prefab, new PieceConfig
+            {
+                PieceTable = "_HammerPieceTable",
+                AllowedInDungeons = true,
+                CraftingStation = "piece_workbench",
+                Requirements = new[]
+                    {
+                        new RequirementConfig { Item = "Stone", Amount = 24 }
+                    }
+            });
+            // Piece end //
+
+            // Piece: stonewall_hardrock_2x1 //
+            OdinArchitect.Create_stonewall_hardrock_2x1_prefab = OdinArchitectBundle.LoadAsset<GameObject>("stonewall_hardrock_2x1");
+            var Create_stonewall_hardrock_2x1 = new CustomPiece(Create_stonewall_hardrock_2x1_prefab, new PieceConfig
+            {
+                PieceTable = "_HammerPieceTable",
+                AllowedInDungeons = true,
+                CraftingStation = "piece_workbench",
+                Requirements = new[]
+                    {
+                        new RequirementConfig { Item = "Stone", Amount = 24 }
+                    }
+            });
+            // Piece end //
+
+            // Piece: stonewall_hardrock_4x2 //
+            OdinArchitect.Create_stonewall_hardrock_4x2_prefab = OdinArchitectBundle.LoadAsset<GameObject>("stonewall_hardrock_4x2");
+            var Create_stonewall_hardrock_4x2 = new CustomPiece(Create_stonewall_hardrock_4x2_prefab, new PieceConfig
+            {
+                PieceTable = "_HammerPieceTable",
+                AllowedInDungeons = true,
+                CraftingStation = "piece_workbench",
+                Requirements = new[]
+                    {
+                        new RequirementConfig { Item = "Stone", Amount = 24 }
+                    }
+            });
+            // Piece end //
+
+            // Piece: stonewall_hardrock_arch //
+            OdinArchitect.Create_stonewall_hardrock_arch_prefab = OdinArchitectBundle.LoadAsset<GameObject>("stonewall_hardrock_arch");
+            var Create_stonewall_hardrock_arch = new CustomPiece(Create_stonewall_hardrock_arch_prefab, new PieceConfig
+            {
+                PieceTable = "_HammerPieceTable",
+                AllowedInDungeons = true,
+                CraftingStation = "piece_workbench",
+                Requirements = new[]
+                    {
+                        new RequirementConfig { Item = "Stone", Amount = 24 }
+                    }
+            });
+            // Piece end //
+
+            // Piece: stonewall_hardrock_pillar //
+            OdinArchitect.Create_stonewall_hardrock_pillar_prefab = OdinArchitectBundle.LoadAsset<GameObject>("stonewall_hardrock_pillar");
+            var Create_stonewall_hardrock_pillar = new CustomPiece(Create_stonewall_hardrock_pillar_prefab, new PieceConfig
+            {
+                PieceTable = "_HammerPieceTable",
+                AllowedInDungeons = true,
+                CraftingStation = "piece_workbench",
+                Requirements = new[]
+                    {
+                        new RequirementConfig { Item = "Stone", Amount = 24 }
+                    }
+            });
+            // Piece end //
+
+            // Piece: stonewall_hardrock_stairs //
+            OdinArchitect.Create_stonewall_hardrock_stairs_prefab = OdinArchitectBundle.LoadAsset<GameObject>("stonewall_hardrock_stairs");
+            var Create_stonewall_hardrock_stairs = new CustomPiece(Create_stonewall_hardrock_stairs_prefab, new PieceConfig
+            {
+                PieceTable = "_HammerPieceTable",
+                AllowedInDungeons = true,
+                CraftingStation = "piece_workbench",
+                Requirements = new[]
+                    {
+                        new RequirementConfig { Item = "Stone", Amount = 24 }
+                    }
+            });
+            // Piece end //
+
+            // Piece: stone_arch_1 //
+            OdinArchitect.Create_stone_arch_1_prefab = OdinArchitectBundle.LoadAsset<GameObject>("stone_arch_1");
+            var Create_stone_arch_1 = new CustomPiece(Create_stone_arch_1_prefab, new PieceConfig
+            {
+                PieceTable = "_HammerPieceTable",
+                AllowedInDungeons = true,
+                CraftingStation = "piece_workbench",
+                Requirements = new[]
+                    {
+                        new RequirementConfig { Item = "Stone", Amount = 24 }
+                    }
+            });
+            // Piece end //
+
+            // Piece: stone_arch_2_small //
+            OdinArchitect.Create_stone_arch_2_small_prefab = OdinArchitectBundle.LoadAsset<GameObject>("stone_arch_2_small");
+            var Create_stone_arch_2_small = new CustomPiece(Create_stone_arch_2_small_prefab, new PieceConfig
+            {
+                PieceTable = "_HammerPieceTable",
+                AllowedInDungeons = true,
+                CraftingStation = "piece_workbench",
+                Requirements = new[]
+                    {
+                        new RequirementConfig { Item = "Stone", Amount = 24 }
+                    }
+            });
+            // Piece end //
+
+            // Piece: stone_floor_1_new //
+            OdinArchitect.Create_stone_floor_1_new_prefab = OdinArchitectBundle.LoadAsset<GameObject>("stone_floor_1_new");
+            var Create_stone_floor_1_new = new CustomPiece(Create_stone_floor_1_new_prefab, new PieceConfig
+            {
+                PieceTable = "_HammerPieceTable",
+                AllowedInDungeons = true,
+                CraftingStation = "piece_workbench",
+                Requirements = new[]
+                    {
+                        new RequirementConfig { Item = "Stone", Amount = 24 }
+                    }
+            });
+            // Piece end //
+
+            // Piece: stone_table_1 //
+            OdinArchitect.Create_stone_table_1_prefab = OdinArchitectBundle.LoadAsset<GameObject>("stone_table_1");
+            var Create_stone_table_1 = new CustomPiece(Create_stone_table_1_prefab, new PieceConfig
+            {
+                PieceTable = "_HammerPieceTable",
+                AllowedInDungeons = true,
+                CraftingStation = "piece_workbench",
+                Requirements = new[]
+                    {
+                        new RequirementConfig { Item = "Stone", Amount = 24 }
+                    }
+            });
+            // Piece end //
+
+            // Piece: thin_wood_beam_26_short //
+            OdinArchitect.Create_thin_wood_beam_26_short_prefab = OdinArchitectBundle.LoadAsset<GameObject>("thin_wood_beam_26_short");
+            var Create_thin_wood_beam_26_short = new CustomPiece(Create_thin_wood_beam_26_short_prefab, new PieceConfig
+            {
+                PieceTable = "_HammerPieceTable",
+                AllowedInDungeons = true,
+                CraftingStation = "piece_workbench",
+                Requirements = new[]
+                    {
+                        new RequirementConfig { Item = "Stone", Amount = 24 }
+                    }
+            });
+            // Piece end //
+
+            // Piece: thin_wood_beam_26_long //
+            OdinArchitect.Create_thin_wood_beam_26_long_prefab = OdinArchitectBundle.LoadAsset<GameObject>("thin_wood_beam_26_long");
+            var Create_thin_wood_beam_26_long = new CustomPiece(Create_thin_wood_beam_26_long_prefab, new PieceConfig
+            {
+                PieceTable = "_HammerPieceTable",
+                AllowedInDungeons = true,
+                CraftingStation = "piece_workbench",
+                Requirements = new[]
+                    {
+                        new RequirementConfig { Item = "Stone", Amount = 24 }
+                    }
+            });
+            // Piece end //
+
             // Piece Manager //
             // Buildings //
             PieceManager.Instance.AddPiece(Create_wooden_window_small);
@@ -421,6 +616,22 @@ namespace OdinArchitect
             PieceManager.Instance.AddPiece(Create_iron_gate_small);
             PieceManager.Instance.AddPiece(Create_iron_gate_big);
             PieceManager.Instance.AddPiece(Create_iron_dragon);
+            PieceManager.Instance.AddPiece(Create_big_pillar);
+
+            PieceManager.Instance.AddPiece(Create_stonewall_hardrock_1x1);
+            PieceManager.Instance.AddPiece(Create_stonewall_hardrock_2x1);
+            PieceManager.Instance.AddPiece(Create_stonewall_hardrock_4x2);
+            PieceManager.Instance.AddPiece(Create_stonewall_hardrock_arch);
+            PieceManager.Instance.AddPiece(Create_stonewall_hardrock_pillar);
+            PieceManager.Instance.AddPiece(Create_stonewall_hardrock_stairs);
+
+            PieceManager.Instance.AddPiece(Create_stone_arch_1);
+            PieceManager.Instance.AddPiece(Create_stone_arch_2_small);
+            PieceManager.Instance.AddPiece(Create_stone_floor_1_new);
+            PieceManager.Instance.AddPiece(Create_stone_table_1);
+
+            PieceManager.Instance.AddPiece(Create_thin_wood_beam_26_short);
+            PieceManager.Instance.AddPiece(Create_thin_wood_beam_26_long);
 
             // Furnitures //
             PieceManager.Instance.AddPiece(Create_surtling_lantern_1);
@@ -463,6 +674,22 @@ namespace OdinArchitect
             MaterialReplacer.ReplaceAllMaterialsWithOriginal(OdinArchitect.Create_iron_gate_small_prefab);
             MaterialReplacer.ReplaceAllMaterialsWithOriginal(OdinArchitect.Create_iron_gate_big_prefab);
             MaterialReplacer.ReplaceAllMaterialsWithOriginal(OdinArchitect.Create_iron_dragon_prefab);
+            MaterialReplacer.ReplaceAllMaterialsWithOriginal(OdinArchitect.Create_big_pillar_prefab);
+
+            MaterialReplacer.ReplaceAllMaterialsWithOriginal(OdinArchitect.Create_stonewall_hardrock_1x1_prefab);
+            MaterialReplacer.ReplaceAllMaterialsWithOriginal(OdinArchitect.Create_stonewall_hardrock_2x1_prefab);
+            MaterialReplacer.ReplaceAllMaterialsWithOriginal(OdinArchitect.Create_stonewall_hardrock_4x2_prefab);
+            MaterialReplacer.ReplaceAllMaterialsWithOriginal(OdinArchitect.Create_stonewall_hardrock_arch_prefab);
+            MaterialReplacer.ReplaceAllMaterialsWithOriginal(OdinArchitect.Create_stonewall_hardrock_pillar_prefab);
+            MaterialReplacer.ReplaceAllMaterialsWithOriginal(OdinArchitect.Create_stonewall_hardrock_stairs_prefab);
+
+            MaterialReplacer.ReplaceAllMaterialsWithOriginal(OdinArchitect.Create_thin_wood_beam_26_short_prefab);
+            MaterialReplacer.ReplaceAllMaterialsWithOriginal(OdinArchitect.Create_thin_wood_beam_26_long_prefab);
+
+            MaterialReplacer.ReplaceAllMaterialsWithOriginal(OdinArchitect.Create_stone_arch_1_prefab);
+            MaterialReplacer.ReplaceAllMaterialsWithOriginal(OdinArchitect.Create_stone_arch_2_small_prefab);
+            MaterialReplacer.ReplaceAllMaterialsWithOriginal(OdinArchitect.Create_stone_floor_1_new_prefab);
+            MaterialReplacer.ReplaceAllMaterialsWithOriginal(OdinArchitect.Create_stone_table_1_prefab);
         }
 
         private static void AddLocalizations()

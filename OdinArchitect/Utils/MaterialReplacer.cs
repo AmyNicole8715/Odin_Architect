@@ -40,7 +40,7 @@ namespace OdinArchitect
                         }
                         else
                         {
-                            Jotunn.Logger.LogInfo("Error: No suitable material found to replace: " + matName);
+                            Jotunn.Logger.LogInfo("No replacement for meterial: " + matName + ".Using custom material.");
                             originalMaterials[matName] = renderer.material;
                         }
                     }

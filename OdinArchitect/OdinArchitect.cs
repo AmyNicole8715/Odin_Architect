@@ -66,7 +66,7 @@ namespace OdinArchitect
         public static GameObject Create_stone_beam_long_prefab { get; private set; }
         public static GameObject Create_stone_pole_short_prefab { get; private set; }
         public static GameObject Create_stone_pole_long_prefab { get; private set; }
-
+        public static GameObject Create_food_smelter_prefab { get; private set; }
         // public static GameObject Create_fish_trap_prefab { get; private set; }
         // public static GameObject Create_bird_house_prefab { get; private set; }
 
@@ -660,6 +660,20 @@ namespace OdinArchitect
             });
             // Piece end //
 
+            // Piece: food_smelter //
+            OdinArchitect.Create_food_smelter_prefab = OdinArchitectBundle.LoadAsset<GameObject>("food_smelter");
+            var Create_food_smelter = new CustomPiece(Create_food_smelter_prefab, new PieceConfig
+            {
+                PieceTable = "_HammerPieceTable",
+                AllowedInDungeons = true,
+                CraftingStation = "piece_workbench",
+                Requirements = new[]
+                    {
+                        new RequirementConfig { Item = "Stone", Amount = 2 }
+                    }
+            });
+            // Piece end //
+
             // Piece: bird_house //
             // OdinArchitect.Create_bird_house_prefab = OdinArchitectBundle.LoadAsset<GameObject>("bird_house");
             // var Create_bird_house = new CustomPiece(Create_bird_house_prefab, new PieceConfig
@@ -735,6 +749,8 @@ namespace OdinArchitect
 
             PieceManager.Instance.AddPiece(Create_wooden_drawbridge_1);
 
+            PieceManager.Instance.AddPiece(Create_food_smelter);
+
             // PieceManager.Instance.AddPiece(Create_bird_house);
             // PieceManager.Instance.AddPiece(Create_fish_trap);
 
@@ -797,6 +813,8 @@ namespace OdinArchitect
             MaterialReplacer.ReplaceAllMaterialsWithOriginal(OdinArchitect.Create_stone_throne_1_prefab);
 
             MaterialReplacer.ReplaceAllMaterialsWithOriginal(OdinArchitect.Create_wooden_drawbridge_1_prefab);
+
+            MaterialReplacer.ReplaceAllMaterialsWithOriginal(OdinArchitect.Create_food_smelter_prefab);
 
             // MaterialReplacer.ReplaceAllMaterialsWithOriginal(OdinArchitect.Create_bird_house_prefab);
             // MaterialReplacer.ReplaceAllMaterialsWithOriginal(OdinArchitect.Create_fish_trap_prefab);

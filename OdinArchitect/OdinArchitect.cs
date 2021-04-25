@@ -62,6 +62,12 @@ namespace OdinArchitect
         public static GameObject Create_stone_arch_2_small_prefab { get; private set; }
         public static GameObject Create_stone_throne_1_prefab { get; private set; }
         public static GameObject Create_wooden_drawbridge_1_prefab { get; private set; }
+        public static GameObject Create_stone_beam_short_prefab { get; private set; }
+        public static GameObject Create_stone_beam_long_prefab { get; private set; }
+        public static GameObject Create_stone_pole_short_prefab { get; private set; }
+        public static GameObject Create_stone_pole_long_prefab { get; private set; }
+
+        // public static GameObject Create_fish_trap_prefab { get; private set; }
         // public static GameObject Create_bird_house_prefab { get; private set; }
 
         private void Awake()
@@ -598,9 +604,80 @@ namespace OdinArchitect
             });
             // Piece end //
 
+            // Piece: stone_pole_short //
+            OdinArchitect.Create_stone_pole_short_prefab = OdinArchitectBundle.LoadAsset<GameObject>("stone_pole_short");
+            var Create_stone_pole_short = new CustomPiece(Create_stone_pole_short_prefab, new PieceConfig
+            {
+                PieceTable = "_HammerPieceTable",
+                AllowedInDungeons = true,
+                CraftingStation = "piece_workbench",
+                Requirements = new[]
+                    {
+                        new RequirementConfig { Item = "Stone", Amount = 1 }
+                    }
+            });
+            // Piece end //
+
+            // Piece: stone_pole_long //
+            OdinArchitect.Create_stone_pole_long_prefab = OdinArchitectBundle.LoadAsset<GameObject>("stone_pole_long");
+            var Create_stone_pole_long = new CustomPiece(Create_stone_pole_long_prefab, new PieceConfig
+            {
+                PieceTable = "_HammerPieceTable",
+                AllowedInDungeons = true,
+                CraftingStation = "piece_workbench",
+                Requirements = new[]
+                    {
+                        new RequirementConfig { Item = "Stone", Amount = 2 }
+                    }
+            });
+            // Piece end //
+
+            // Piece: stone_beam_short //
+            OdinArchitect.Create_stone_beam_short_prefab = OdinArchitectBundle.LoadAsset<GameObject>("stone_beam_short");
+            var Create_stone_beam_short = new CustomPiece(Create_stone_beam_short_prefab, new PieceConfig
+            {
+                PieceTable = "_HammerPieceTable",
+                AllowedInDungeons = true,
+                CraftingStation = "piece_workbench",
+                Requirements = new[]
+                    {
+                        new RequirementConfig { Item = "Stone", Amount = 1 }
+                    }
+            });
+            // Piece end //
+
+            // Piece: stone_beam_long //
+            OdinArchitect.Create_stone_beam_long_prefab = OdinArchitectBundle.LoadAsset<GameObject>("stone_beam_long");
+            var Create_stone_beam_long = new CustomPiece(Create_stone_beam_long_prefab, new PieceConfig
+            {
+                PieceTable = "_HammerPieceTable",
+                AllowedInDungeons = true,
+                CraftingStation = "piece_workbench",
+                Requirements = new[]
+                    {
+                        new RequirementConfig { Item = "Stone", Amount = 2 }
+                    }
+            });
+            // Piece end //
+
             // Piece: bird_house //
             // OdinArchitect.Create_bird_house_prefab = OdinArchitectBundle.LoadAsset<GameObject>("bird_house");
             // var Create_bird_house = new CustomPiece(Create_bird_house_prefab, new PieceConfig
+            // {
+            //     PieceTable = "_HammerPieceTable",
+            //     AllowedInDungeons = true,
+            //     CraftingStation = "piece_workbench",
+            //     Requirements = new[]
+            //         {
+            //             new RequirementConfig { Item = "Wood", Amount = 10 },
+            //             new RequirementConfig { Item = "Feathers", Amount = 60 }
+            //         }
+            // });
+            // Piece end //
+
+            // Piece: fish_trap //
+            // OdinArchitect.Create_fish_trap_prefab = OdinArchitectBundle.LoadAsset<GameObject>("fish_trap");
+            // var Create_fish_trap = new CustomPiece(Create_fish_trap_prefab, new PieceConfig
             // {
             //     PieceTable = "_HammerPieceTable",
             //     AllowedInDungeons = true,
@@ -621,6 +698,12 @@ namespace OdinArchitect
             PieceManager.Instance.AddPiece(Create_thin_wood_beam_1);
             PieceManager.Instance.AddPiece(Create_thin_wood_pole_1);
             PieceManager.Instance.AddPiece(Create_thin_wood_pole_2);
+
+            PieceManager.Instance.AddPiece(Create_stone_beam_short);
+            PieceManager.Instance.AddPiece(Create_stone_beam_long);
+            PieceManager.Instance.AddPiece(Create_stone_pole_short);
+            PieceManager.Instance.AddPiece(Create_stone_pole_long);
+
             PieceManager.Instance.AddPiece(Create_wooden_fence_1);
             PieceManager.Instance.AddPiece(Create_wooden_fence_1_gate);
             PieceManager.Instance.AddPiece(Create_wooden_fence_2);
@@ -653,6 +736,7 @@ namespace OdinArchitect
             PieceManager.Instance.AddPiece(Create_wooden_drawbridge_1);
 
             // PieceManager.Instance.AddPiece(Create_bird_house);
+            // PieceManager.Instance.AddPiece(Create_fish_trap);
 
             // Furnitures //
             PieceManager.Instance.AddPiece(Create_surtling_lantern_1);
@@ -679,6 +763,12 @@ namespace OdinArchitect
             MaterialReplacer.ReplaceAllMaterialsWithOriginal(OdinArchitect.Create_thin_wood_beam_2_prefab);
             MaterialReplacer.ReplaceAllMaterialsWithOriginal(OdinArchitect.Create_thin_wood_pole_1_prefab);
             MaterialReplacer.ReplaceAllMaterialsWithOriginal(OdinArchitect.Create_thin_wood_pole_2_prefab);
+
+            MaterialReplacer.ReplaceAllMaterialsWithOriginal(OdinArchitect.Create_stone_beam_short_prefab);
+            MaterialReplacer.ReplaceAllMaterialsWithOriginal(OdinArchitect.Create_stone_beam_long_prefab);
+            MaterialReplacer.ReplaceAllMaterialsWithOriginal(OdinArchitect.Create_stone_pole_short_prefab);
+            MaterialReplacer.ReplaceAllMaterialsWithOriginal(OdinArchitect.Create_stone_pole_long_prefab);
+
             MaterialReplacer.ReplaceAllMaterialsWithOriginal(OdinArchitect.Create_wooden_fence_1_prefab);
             MaterialReplacer.ReplaceAllMaterialsWithOriginal(OdinArchitect.Create_wooden_fence_2_prefab);
             MaterialReplacer.ReplaceAllMaterialsWithOriginal(OdinArchitect.Create_wooden_fence_1_gate_prefab);
@@ -709,6 +799,7 @@ namespace OdinArchitect
             MaterialReplacer.ReplaceAllMaterialsWithOriginal(OdinArchitect.Create_wooden_drawbridge_1_prefab);
 
             // MaterialReplacer.ReplaceAllMaterialsWithOriginal(OdinArchitect.Create_bird_house_prefab);
+            // MaterialReplacer.ReplaceAllMaterialsWithOriginal(OdinArchitect.Create_fish_trap_prefab);
 
             MaterialReplacer.ReplaceAllMaterialsWithOriginal(OdinArchitect.Create_stone_arch_1_prefab);
             MaterialReplacer.ReplaceAllMaterialsWithOriginal(OdinArchitect.Create_stone_arch_2_small_prefab);

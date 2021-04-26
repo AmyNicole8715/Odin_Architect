@@ -24,8 +24,10 @@ namespace OdinArchitect
         public const string PluginVersion = "0.0.1";
         public static new Jotunn.Logger Logger;
 
+        // Bundles
         public static AssetBundle OdinArchitectBundle;
 
+        // Pieces
         public static GameObject Create_wooden_gate_1_prefab { get; private set; }
         public static GameObject Create_wooden_window_small_prefab { get; private set; }
         public static GameObject Create_wooden_window_big_prefab { get; private set; }
@@ -67,6 +69,11 @@ namespace OdinArchitect
         public static GameObject Create_stone_pole_short_prefab { get; private set; }
         public static GameObject Create_stone_pole_long_prefab { get; private set; }
         public static GameObject Create_food_smelter_prefab { get; private set; }
+
+        // Items
+        public static GameObject Create_dragon_helmet_prefab { get; private set; }
+        public static GameObject Create_dragon_helmet2_prefab { get; private set; }
+
         // public static GameObject Create_fish_trap_prefab { get; private set; }
         // public static GameObject Create_bird_house_prefab { get; private set; }
 
@@ -75,6 +82,7 @@ namespace OdinArchitect
             LoadAssets();
             CreateCustomPieces();
             AddLocalizations();
+            AddHelmetsWithConfigs();
         }
 
         private void LoadAssets()
@@ -392,7 +400,7 @@ namespace OdinArchitect
             });
             // Piece end //
 
-            // Piece: iron_gate_small //
+            // Piece: iron_gate_big //
             OdinArchitect.Create_iron_gate_big_prefab = OdinArchitectBundle.LoadAsset<GameObject>("iron_gate_big");
             var Create_iron_gate_big = new CustomPiece(Create_iron_gate_big_prefab, new PieceConfig
             {
@@ -426,7 +434,7 @@ namespace OdinArchitect
             {
                 PieceTable = "_HammerPieceTable",
                 AllowedInDungeons = true,
-                CraftingStation = "piece_workbench",
+                CraftingStation = "piece_stonecutter",
                 Requirements = new[]
                     {
                         new RequirementConfig { Item = "Stone", Amount = 24 }
@@ -440,10 +448,10 @@ namespace OdinArchitect
             {
                 PieceTable = "_HammerPieceTable",
                 AllowedInDungeons = true,
-                CraftingStation = "piece_workbench",
+                CraftingStation = "piece_stonecutter",
                 Requirements = new[]
                     {
-                        new RequirementConfig { Item = "Stone", Amount = 24 }
+                        new RequirementConfig { Item = "Stone", Amount = 3 }
                     }
             });
             // Piece end //
@@ -454,10 +462,10 @@ namespace OdinArchitect
             {
                 PieceTable = "_HammerPieceTable",
                 AllowedInDungeons = true,
-                CraftingStation = "piece_workbench",
+                CraftingStation = "piece_stonecutter",
                 Requirements = new[]
                     {
-                        new RequirementConfig { Item = "Stone", Amount = 24 }
+                        new RequirementConfig { Item = "Stone", Amount = 4 }
                     }
             });
             // Piece end //
@@ -468,10 +476,10 @@ namespace OdinArchitect
             {
                 PieceTable = "_HammerPieceTable",
                 AllowedInDungeons = true,
-                CraftingStation = "piece_workbench",
+                CraftingStation = "piece_stonecutter",
                 Requirements = new[]
                     {
-                        new RequirementConfig { Item = "Stone", Amount = 24 }
+                        new RequirementConfig { Item = "Stone", Amount = 6 }
                     }
             });
             // Piece end //
@@ -482,10 +490,10 @@ namespace OdinArchitect
             {
                 PieceTable = "_HammerPieceTable",
                 AllowedInDungeons = true,
-                CraftingStation = "piece_workbench",
+                CraftingStation = "piece_stonecutter",
                 Requirements = new[]
                     {
-                        new RequirementConfig { Item = "Stone", Amount = 24 }
+                        new RequirementConfig { Item = "Stone", Amount = 4 }
                     }
             });
             // Piece end //
@@ -496,10 +504,10 @@ namespace OdinArchitect
             {
                 PieceTable = "_HammerPieceTable",
                 AllowedInDungeons = true,
-                CraftingStation = "piece_workbench",
+                CraftingStation = "piece_stonecutter",
                 Requirements = new[]
                     {
-                        new RequirementConfig { Item = "Stone", Amount = 24 }
+                        new RequirementConfig { Item = "Stone", Amount = 5 }
                     }
             });
             // Piece end //
@@ -510,10 +518,10 @@ namespace OdinArchitect
             {
                 PieceTable = "_HammerPieceTable",
                 AllowedInDungeons = true,
-                CraftingStation = "piece_workbench",
+                CraftingStation = "piece_stonecutter",
                 Requirements = new[]
                     {
-                        new RequirementConfig { Item = "Stone", Amount = 24 }
+                        new RequirementConfig { Item = "Stone", Amount = 8 }
                     }
             });
             // Piece end //
@@ -524,10 +532,10 @@ namespace OdinArchitect
             {
                 PieceTable = "_HammerPieceTable",
                 AllowedInDungeons = true,
-                CraftingStation = "piece_workbench",
+                CraftingStation = "piece_stonecutter",
                 Requirements = new[]
                     {
-                        new RequirementConfig { Item = "Stone", Amount = 24 }
+                        new RequirementConfig { Item = "Stone", Amount = 36 }
                     }
             });
             // Piece end //
@@ -538,10 +546,10 @@ namespace OdinArchitect
             {
                 PieceTable = "_HammerPieceTable",
                 AllowedInDungeons = true,
-                CraftingStation = "piece_workbench",
+                CraftingStation = "piece_stonecutter",
                 Requirements = new[]
                     {
-                        new RequirementConfig { Item = "Stone", Amount = 24 }
+                        new RequirementConfig { Item = "Stone", Amount = 12 }
                     }
             });
             // Piece end //
@@ -552,10 +560,10 @@ namespace OdinArchitect
             {
                 PieceTable = "_HammerPieceTable",
                 AllowedInDungeons = true,
-                CraftingStation = "piece_workbench",
+                CraftingStation = "piece_stonecutter",
                 Requirements = new[]
                     {
-                        new RequirementConfig { Item = "Stone", Amount = 24 }
+                        new RequirementConfig { Item = "Stone", Amount = 8 }
                     }
             });
             // Piece end //
@@ -566,10 +574,10 @@ namespace OdinArchitect
             {
                 PieceTable = "_HammerPieceTable",
                 AllowedInDungeons = true,
-                CraftingStation = "piece_workbench",
+                CraftingStation = "piece_stonecutter",
                 Requirements = new[]
                     {
-                        new RequirementConfig { Item = "Stone", Amount = 24 }
+                        new RequirementConfig { Item = "Stone", Amount = 20 }
                     }
             });
             // Piece end //
@@ -580,10 +588,11 @@ namespace OdinArchitect
             {
                 PieceTable = "_HammerPieceTable",
                 AllowedInDungeons = true,
-                CraftingStation = "piece_workbench",
+                CraftingStation = "piece_stonecutter",
                 Requirements = new[]
                     {
-                        new RequirementConfig { Item = "Stone", Amount = 24 }
+                        new RequirementConfig { Item = "Stone", Amount = 24 },
+                        new RequirementConfig { Item = "Iron", Amount = 12 }
                     }
             });
             // Piece end //
@@ -598,6 +607,7 @@ namespace OdinArchitect
                 Requirements = new[]
                     {
                         new RequirementConfig { Item = "Wood", Amount = 34 },
+                        new RequirementConfig { Item = "FineWood", Amount = 6 },
                         new RequirementConfig { Item = "Iron", Amount = 4 },
                         new RequirementConfig { Item = "SurtlingCore", Amount = 1 }
                     }
@@ -610,7 +620,7 @@ namespace OdinArchitect
             {
                 PieceTable = "_HammerPieceTable",
                 AllowedInDungeons = true,
-                CraftingStation = "piece_workbench",
+                CraftingStation = "piece_stonecutter",
                 Requirements = new[]
                     {
                         new RequirementConfig { Item = "Stone", Amount = 1 }
@@ -624,7 +634,7 @@ namespace OdinArchitect
             {
                 PieceTable = "_HammerPieceTable",
                 AllowedInDungeons = true,
-                CraftingStation = "piece_workbench",
+                CraftingStation = "piece_stonecutter",
                 Requirements = new[]
                     {
                         new RequirementConfig { Item = "Stone", Amount = 2 }
@@ -638,7 +648,7 @@ namespace OdinArchitect
             {
                 PieceTable = "_HammerPieceTable",
                 AllowedInDungeons = true,
-                CraftingStation = "piece_workbench",
+                CraftingStation = "piece_stonecutter",
                 Requirements = new[]
                     {
                         new RequirementConfig { Item = "Stone", Amount = 1 }
@@ -652,7 +662,7 @@ namespace OdinArchitect
             {
                 PieceTable = "_HammerPieceTable",
                 AllowedInDungeons = true,
-                CraftingStation = "piece_workbench",
+                CraftingStation = "piece_stonecutter",
                 Requirements = new[]
                     {
                         new RequirementConfig { Item = "Stone", Amount = 2 }
@@ -666,10 +676,13 @@ namespace OdinArchitect
             {
                 PieceTable = "_HammerPieceTable",
                 AllowedInDungeons = true,
-                CraftingStation = "piece_workbench",
+                CraftingStation = "piece_stonecutter",
                 Requirements = new[]
                     {
-                        new RequirementConfig { Item = "Stone", Amount = 2 }
+                        new RequirementConfig { Item = "SurtlingCore", Amount = 5 },
+                        new RequirementConfig { Item = "Stone", Amount = 15 },
+                        new RequirementConfig { Item = "FineWood", Amount = 20 },
+                        new RequirementConfig { Item = "Bronze", Amount = 5 }
                     }
             });
             // Piece end //
@@ -763,6 +776,40 @@ namespace OdinArchitect
 
             // Utils //
             AddLocalizations();
+        }
+
+        private void AddHelmetsWithConfigs()
+        {
+            // Create and add a custom item
+            OdinArchitect.Create_dragon_helmet_prefab = OdinArchitectBundle.LoadAsset<GameObject>("HelmetDrake_Test");
+            var Create_dragon_helmet = new CustomItem(Create_dragon_helmet_prefab, fixReference: false,
+                new ItemConfig
+                {
+                    Amount = 1,
+                    Requirements = new[]
+                    {
+                        new RequirementConfig { Item = "Stone", Amount = 1 }
+                    }
+                });
+
+            // Create and add a custom item
+            OdinArchitect.Create_dragon_helmet2_prefab = OdinArchitectBundle.LoadAsset<GameObject>("HelmetDrake_Test2");
+            var Create_dragon_helmet2 = new CustomItem(Create_dragon_helmet2_prefab, fixReference: false,
+                new ItemConfig
+                {
+                    Amount = 1,
+                    Requirements = new[]
+                    {
+                        new RequirementConfig { Item = "Stone", Amount = 1 }
+                    }
+                });
+
+            // Items
+            ItemManager.Instance.AddItem(Create_dragon_helmet);
+            ItemManager.Instance.AddItem(Create_dragon_helmet2);
+
+            // Utils //
+            AddLocalizations();
             OdinArchitectBundle.Unload(false);
         }
 
@@ -815,6 +862,8 @@ namespace OdinArchitect
             MaterialReplacer.ReplaceAllMaterialsWithOriginal(OdinArchitect.Create_wooden_drawbridge_1_prefab);
 
             MaterialReplacer.ReplaceAllMaterialsWithOriginal(OdinArchitect.Create_food_smelter_prefab);
+            MaterialReplacer.ReplaceAllMaterialsWithOriginal(OdinArchitect.Create_dragon_helmet_prefab);
+            MaterialReplacer.ReplaceAllMaterialsWithOriginal(OdinArchitect.Create_dragon_helmet2_prefab);
 
             // MaterialReplacer.ReplaceAllMaterialsWithOriginal(OdinArchitect.Create_bird_house_prefab);
             // MaterialReplacer.ReplaceAllMaterialsWithOriginal(OdinArchitect.Create_fish_trap_prefab);
@@ -889,7 +938,12 @@ namespace OdinArchitect
                         { "surtling_lantern_4_desc", "Wall mounted surtling core lantern" },
 
                         { "wooden_window_big", "Big window" },
-                        { "wooden_window_big_desc", "Big wooden window" }
+                        { "wooden_window_big_desc", "Big wooden window" },
+
+                        { "food_smelter", "Advanced Cooking Station" },
+                        { "food_smelter_desc", "Surtling Core powered cooking station" },
+                        { "food_smelter_additem", "Add food" },
+                        { "food_smelter_empty", "It's empty" }
                     }
             });
             LocalizationManager.Instance.AddLocalization(new LocalizationConfig("Polish")
@@ -942,7 +996,12 @@ namespace OdinArchitect
                         { "refined_sharpstakes_desc", "Wytrzymalszy ostrokół" },
 
                         { "odin_hammer", "Precyzyjny młot" },
-                        { "odin_hammer_desc", "Młot dzięki któremu wybudujesz unikatowe, wcześniej niedostępne elementy budownictwa" }
+                        { "odin_hammer_desc", "Młot dzięki któremu wybudujesz unikatowe, wcześniej niedostępne elementy budownictwa" },
+
+                        { "food_smelter", "Zaawansowany podsmażacz" },
+                        { "food_smelter_desc", "Stacja gotująca zasilana rdzeniem surtlinga" },
+                        { "food_smelter_additem", "Dodaj jedzenie" },
+                        { "food_smelter_empty", "Pusto" }
                     }
             });
         }

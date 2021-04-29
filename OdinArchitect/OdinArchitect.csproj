@@ -122,7 +122,6 @@
     <None Include="Package\README.md" />
   </ItemGroup>
   <ItemGroup>
-    <Folder Include="Items\" />
     <Folder Include="Package\plugins\" />
   </ItemGroup>
   <ItemGroup>

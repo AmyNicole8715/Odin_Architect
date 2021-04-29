@@ -16,7 +16,6 @@ namespace OdinArchitect
 {
     [BepInPlugin(PluginGUID, PluginName, PluginVersion)]
     [BepInDependency(Jotunn.Main.ModGuid)]
-    //[NetworkCompatibilty(CompatibilityLevel.EveryoneMustHaveMod, VersionStrictness.Minor)]
     internal class OdinArchitect : BaseUnityPlugin
     {
         public const string PluginGUID = "com.raelaziel";
@@ -70,19 +69,11 @@ namespace OdinArchitect
         public static GameObject Create_stone_pole_long_prefab { get; private set; }
         public static GameObject Create_food_smelter_prefab { get; private set; }
 
-        // Items
-        public static GameObject Create_dragon_helmet_prefab { get; private set; }
-        public static GameObject Create_dragon_helmet2_prefab { get; private set; }
-
-        // public static GameObject Create_fish_trap_prefab { get; private set; }
-        // public static GameObject Create_bird_house_prefab { get; private set; }
-
         private void Awake()
         {
             LoadAssets();
             CreateCustomPieces();
             AddLocalizations();
-            AddHelmetsWithConfigs();
         }
 
         private void LoadAssets()
@@ -687,36 +678,6 @@ namespace OdinArchitect
             });
             // Piece end //
 
-            // Piece: bird_house //
-            // OdinArchitect.Create_bird_house_prefab = OdinArchitectBundle.LoadAsset<GameObject>("bird_house");
-            // var Create_bird_house = new CustomPiece(Create_bird_house_prefab, new PieceConfig
-            // {
-            //     PieceTable = "_HammerPieceTable",
-            //     AllowedInDungeons = true,
-            //     CraftingStation = "piece_workbench",
-            //     Requirements = new[]
-            //         {
-            //             new RequirementConfig { Item = "Wood", Amount = 10 },
-            //             new RequirementConfig { Item = "Feathers", Amount = 60 }
-            //         }
-            // });
-            // Piece end //
-
-            // Piece: fish_trap //
-            // OdinArchitect.Create_fish_trap_prefab = OdinArchitectBundle.LoadAsset<GameObject>("fish_trap");
-            // var Create_fish_trap = new CustomPiece(Create_fish_trap_prefab, new PieceConfig
-            // {
-            //     PieceTable = "_HammerPieceTable",
-            //     AllowedInDungeons = true,
-            //     CraftingStation = "piece_workbench",
-            //     Requirements = new[]
-            //         {
-            //             new RequirementConfig { Item = "Wood", Amount = 10 },
-            //             new RequirementConfig { Item = "Feathers", Amount = 60 }
-            //         }
-            // });
-            // Piece end //
-
             // Piece Manager //
             // Buildings //
             PieceManager.Instance.AddPiece(Create_wooden_window_small);
@@ -764,49 +725,12 @@ namespace OdinArchitect
 
             PieceManager.Instance.AddPiece(Create_food_smelter);
 
-            // PieceManager.Instance.AddPiece(Create_bird_house);
-            // PieceManager.Instance.AddPiece(Create_fish_trap);
-
             // Furnitures //
             PieceManager.Instance.AddPiece(Create_surtling_lantern_1);
             PieceManager.Instance.AddPiece(Create_surtling_lantern_2);
             PieceManager.Instance.AddPiece(Create_surtling_lantern_3);
             PieceManager.Instance.AddPiece(Create_surtling_lantern_4);
             // Manager end //
-
-            // Utils //
-            AddLocalizations();
-        }
-
-        private void AddHelmetsWithConfigs()
-        {
-            // Create and add a custom item
-            OdinArchitect.Create_dragon_helmet_prefab = OdinArchitectBundle.LoadAsset<GameObject>("HelmetDrake_Test");
-            var Create_dragon_helmet = new CustomItem(Create_dragon_helmet_prefab, fixReference: false,
-                new ItemConfig
-                {
-                    Amount = 1,
-                    Requirements = new[]
-                    {
-                        new RequirementConfig { Item = "Stone", Amount = 1 }
-                    }
-                });
-
-            // Create and add a custom item
-            OdinArchitect.Create_dragon_helmet2_prefab = OdinArchitectBundle.LoadAsset<GameObject>("HelmetDrake_Test2");
-            var Create_dragon_helmet2 = new CustomItem(Create_dragon_helmet2_prefab, fixReference: false,
-                new ItemConfig
-                {
-                    Amount = 1,
-                    Requirements = new[]
-                    {
-                        new RequirementConfig { Item = "Stone", Amount = 1 }
-                    }
-                });
-
-            // Items
-            ItemManager.Instance.AddItem(Create_dragon_helmet);
-            ItemManager.Instance.AddItem(Create_dragon_helmet2);
 
             // Utils //
             AddLocalizations();
@@ -862,11 +786,6 @@ namespace OdinArchitect
             MaterialReplacer.ReplaceAllMaterialsWithOriginal(OdinArchitect.Create_wooden_drawbridge_1_prefab);
 
             MaterialReplacer.ReplaceAllMaterialsWithOriginal(OdinArchitect.Create_food_smelter_prefab);
-            MaterialReplacer.ReplaceAllMaterialsWithOriginal(OdinArchitect.Create_dragon_helmet_prefab);
-            MaterialReplacer.ReplaceAllMaterialsWithOriginal(OdinArchitect.Create_dragon_helmet2_prefab);
-
-            // MaterialReplacer.ReplaceAllMaterialsWithOriginal(OdinArchitect.Create_bird_house_prefab);
-            // MaterialReplacer.ReplaceAllMaterialsWithOriginal(OdinArchitect.Create_fish_trap_prefab);
 
             MaterialReplacer.ReplaceAllMaterialsWithOriginal(OdinArchitect.Create_stone_arch_1_prefab);
             MaterialReplacer.ReplaceAllMaterialsWithOriginal(OdinArchitect.Create_stone_arch_2_small_prefab);
@@ -1005,14 +924,5 @@ namespace OdinArchitect
                     }
             });
         }
-
-#if DEBUG
-        private void Update()
-        {
-            if (Input.GetKeyDown(KeyCode.F6))
-            { // Set a breakpoint here to break on F6 key press
-            }
-        }
-#endif
     }
 }

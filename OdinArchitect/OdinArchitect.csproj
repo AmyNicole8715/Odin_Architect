@@ -44,12 +44,11 @@
     <Compile Include="Properties\IgnoreAccessModifiers.cs" />
     <Compile Include="OdinArchitect.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Utils\ObjectDBScan.cs" />
+    <Compile Include="Utils\MaterialReplacer.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="app.config" />
-    <EmbeddedResource Include="AssetsEmbedded\odinarchitect">
-      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-    </EmbeddedResource>
     <None Include="packages.config" />
     <None Include="Package\README.md" />
   </ItemGroup>

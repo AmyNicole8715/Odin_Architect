@@ -22,56 +22,59 @@ namespace OdinArchitect
         public const string PluginName = "OdinArchitect";
         public const string PluginVersion = "0.0.1";
 
-        private AssetBundle OdinEmbedded;
-        private GameObject placebp_prefab;
+        private AssetBundle OdinArchitectBundle;
+        private static GameObject OA_wooden_gate_1_prefab;
+        private CustomPiece OA_wooden_gate_1;
 
         private void Awake()
         {
-            LoadAssets();
-            AddCustomPieces();
-            AddLocalizations();
+            OA_LoadAssets();
+            OA_AddCustomPieces();
+            OA_AddLocales();
         }
 
-        private void LoadAssets()
+        private void OA_LoadAssets()
         {
-            Jotunn.Logger.LogInfo($"Embedded resources: {string.Join(",", Assembly.GetExecutingAssembly().GetManifestResourceNames())}");
-            OdinEmbedded = AssetUtils.LoadAssetBundleFromResources("odinarchitect", Assembly.GetExecutingAssembly());
-            placebp_prefab = OdinEmbedded.LoadAsset<GameObject>("Assets/CustomStructures/wooden_gate_1.prefab");
+            OdinArchitectBundle = AssetUtils.LoadAssetBundle("OdinArchitect/Assets/odinarchitect");
+            Jotunn.Logger.LogInfo("Assets [" + OdinArchitectBundle + "] loaded succesfully");
         }
 
-        private void AddCustomPieces()
+        private void OA_AddCustomPieces() 
+        {
+            Harmony.CreateAndPatchAll(Assembly.GetExecutingAssembly(), "com.raelaziel");
+            PieceManager PieMan = PieceManager.Instance;
 
-            var placebp = new CustomPiece(placebp_prefab,
+            OdinArchitect.OA_wooden_gate_1_prefab = OdinArchitectBundle.LoadAsset<GameObject>("wooden_gate_1");
+            PieMan.AddPiece(OA_wooden_gate_1 = new CustomPiece(OA_wooden_gate_1_prefab,
                 new PieceConfig
                 {
                     PieceTable = "Hammer",
                     AllowedInDungeons = true,
+                    CraftingStation = "piece_workbench",
                     Requirements = new[]
                     {
                         new RequirementConfig { Item = "Wood", Amount = 20 }
                     }
                 }));
-        PieceManager.Instance.AddPiece(placebp);
-            }
 
-        private void AddLocalizations()
+            OdinArchitectBundle.Unload(false);
+        }
+
+        public static void ReplaceMats()
         {
-            LocalizationManager.Instance.AddLocalization(new LocalizationConfig("English")
+            Jotunn.Logger.LogInfo("Material Replacer loaded succesfully");
+            MaterialReplacer.GetAllMaterials();
+
+            MaterialReplacer.ReplaceAllMaterialsWithOriginal(OdinArchitect.OA_wooden_gate_1_prefab);
+        }
+
+        private void OA_AddLocales()
+        {
+            foreach (TextAsset textAsset in OdinArchitectBundle.LoadAllAssets<TextAsset>())
             {
-                Translations =
-                    {
-                        { "wooden_gate_1", "Big Gate" },
-                        { "wooden_gate_1_desc", "Big and heavy wooden gate" }
-                    }
-            });
-            LocalizationManager.Instance.AddLocalization(new LocalizationConfig("Polish")
-            {
-                Translations =
-                    {
-                        { "wooden_gate_1", "Drewniana brama" },
-                        { "wooden_gate_1_desc", "Wielka i ciężka drewniana brama" }
-                    }
-            });
+                string text = textAsset.name.Replace(".json", null);
+                LocalizationManager.Instance.AddJson(text, textAsset.ToString());
+            }
         }
     }
 }

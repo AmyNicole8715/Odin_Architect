@@ -62,9 +62,7 @@ namespace OdinArchitect
 
         public static void ReplaceMats()
         {
-            Jotunn.Logger.LogInfo("Material Replacer loaded succesfully");
             MaterialReplacer.GetAllMaterials();
-
             MaterialReplacer.ReplaceAllMaterialsWithOriginal(OdinArchitect.OA_wooden_gate_1_prefab);
         }
 
@@ -75,6 +73,7 @@ namespace OdinArchitect
                 string text = textAsset.name.Replace(".json", null);
                 LocalizationManager.Instance.AddJson(text, textAsset.ToString());
             }
+            Jotunn.Logger.LogInfo("Locales from .json file loaded succesfully");
         }
     }
 }

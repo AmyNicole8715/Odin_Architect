@@ -103,8 +103,6 @@ namespace OdinArchitect
         private CustomPiece OA_iron_gate_big;
         private static GameObject OA_iron_gate_small_prefab;
         private CustomPiece OA_iron_gate_small;
-        private static GameObject OA_bird_house_prefab;
-        private CustomPiece OA_bird_house;
 
         private void Awake()
         {
@@ -118,7 +116,7 @@ namespace OdinArchitect
             Jotunn.Logger.LogInfo("Assets [" + OdinArchitectBundle + "] loaded succesfully");
         }
 
-        private void OA_AddCustomPieces() 
+        private void OA_AddCustomPieces()
         {
             Harmony.CreateAndPatchAll(Assembly.GetExecutingAssembly(), "com.raelaziel");
             PieceManager PieMan = PieceManager.Instance;
@@ -132,9 +130,9 @@ namespace OdinArchitect
                     CraftingStation = "piece_workbench",
                     Requirements = new[]
                     {
-                        new RequirementConfig { Item = "Wood", Amount = 20 }
+                        new RequirementConfig { Item = "Wood", Amount = 20, Recover = true }
                     }
-                }));
+                })); 
 
             OdinArchitect.OA_wooden_window_small_prefab = OdinArchitectBundle.LoadAsset<GameObject>("wooden_window_small");
             PieMan.AddPiece(OA_wooden_window_small = new CustomPiece(OA_wooden_window_small_prefab,
@@ -145,7 +143,7 @@ namespace OdinArchitect
                     CraftingStation = "piece_workbench",
                     Requirements = new[]
                     {
-                        new RequirementConfig { Item = "Wood", Amount = 3 }
+                        new RequirementConfig { Item = "Wood", Amount = 3, Recover = true }
                     }
                 }));
 
@@ -158,7 +156,7 @@ namespace OdinArchitect
                     CraftingStation = "piece_workbench",
                     Requirements = new[]
                     {
-                        new RequirementConfig { Item = "Wood", Amount = 6 }
+                        new RequirementConfig { Item = "Wood", Amount = 6, Recover = true }
                     }
                 }));
 
@@ -171,7 +169,7 @@ namespace OdinArchitect
                     CraftingStation = "piece_workbench",
                     Requirements = new[]
                     {
-                        new RequirementConfig { Item = "Wood", Amount = 2 }
+                        new RequirementConfig { Item = "Wood", Amount = 2, Recover = true }
                     }
                 }));
 
@@ -184,7 +182,7 @@ namespace OdinArchitect
                     CraftingStation = "piece_workbench",
                     Requirements = new[]
                     {
-                        new RequirementConfig { Item = "Wood", Amount = 3 }
+                        new RequirementConfig { Item = "Wood", Amount = 3, Recover = true }
                     }
                 }));
 
@@ -197,7 +195,7 @@ namespace OdinArchitect
                     CraftingStation = "piece_workbench",
                     Requirements = new[]
                     {
-                        new RequirementConfig { Item = "Wood", Amount = 3 }
+                        new RequirementConfig { Item = "Wood", Amount = 3, Recover = true }
                     }
                 }));
 
@@ -210,7 +208,7 @@ namespace OdinArchitect
                     CraftingStation = "piece_workbench",
                     Requirements = new[]
                     {
-                        new RequirementConfig { Item = "Wood", Amount = 4 }
+                        new RequirementConfig { Item = "Wood", Amount = 4, Recover = true }
                     }
                 }));
 
@@ -223,7 +221,7 @@ namespace OdinArchitect
                     CraftingStation = "piece_workbench",
                     Requirements = new[]
                     {
-                        new RequirementConfig { Item = "Wood", Amount = 2 }
+                        new RequirementConfig { Item = "Wood", Amount = 2, Recover = true }
                     }
                 }));
 
@@ -236,7 +234,7 @@ namespace OdinArchitect
                     CraftingStation = "piece_workbench",
                     Requirements = new[]
                     {
-                        new RequirementConfig { Item = "Wood", Amount = 1 }
+                        new RequirementConfig { Item = "Wood", Amount = 1, Recover = true }
                     }
                 }));
 
@@ -249,7 +247,7 @@ namespace OdinArchitect
                     CraftingStation = "piece_workbench",
                     Requirements = new[]
                     {
-                        new RequirementConfig { Item = "Wood", Amount = 1 }
+                        new RequirementConfig { Item = "Wood", Amount = 1, Recover = true }
                     }
                 }));
 
@@ -262,7 +260,7 @@ namespace OdinArchitect
                     CraftingStation = "piece_workbench",
                     Requirements = new[]
                     {
-                        new RequirementConfig { Item = "Wood", Amount = 2 }
+                        new RequirementConfig { Item = "Wood", Amount = 2, Recover = true }
                     }
                 }));
 
@@ -275,9 +273,9 @@ namespace OdinArchitect
                     CraftingStation = "piece_workbench",
                     Requirements = new[]
                     {
-                        new RequirementConfig { Item = "Wood", Amount = 12 },
-                        new RequirementConfig { Item = "Iron", Amount = 6 },
-                        new RequirementConfig { Item = "SurtlingCore", Amount = 1 }
+                        new RequirementConfig { Item = "Wood", Amount = 12, Recover = true },
+                        new RequirementConfig { Item = "Iron", Amount = 6, Recover = true },
+                        new RequirementConfig { Item = "SurtlingCore", Amount = 1, Recover = true }
                     }
                 }));
 
@@ -290,8 +288,8 @@ namespace OdinArchitect
                     CraftingStation = "piece_workbench",
                     Requirements = new[]
                     {
-                        new RequirementConfig { Item = "RoundLog", Amount = 3 },
-                        new RequirementConfig { Item = "Resin", Amount = 4 }
+                        new RequirementConfig { Item = "RoundLog", Amount = 3, Recover = true },
+                        new RequirementConfig { Item = "Resin", Amount = 4, Recover = true }
                     }
                 }));
 
@@ -304,8 +302,8 @@ namespace OdinArchitect
                     CraftingStation = "piece_workbench",
                     Requirements = new[]
                     {
-                        new RequirementConfig { Item = "RoundLog", Amount = 5 },
-                        new RequirementConfig { Item = "BronzeNails", Amount = 2 }
+                        new RequirementConfig { Item = "RoundLog", Amount = 5, Recover = true },
+                        new RequirementConfig { Item = "BronzeNails", Amount = 2, Recover = true }
                     }
                 }));
 
@@ -318,8 +316,8 @@ namespace OdinArchitect
                     CraftingStation = "piece_workbench",
                     Requirements = new[]
                     {
-                        new RequirementConfig { Item = "RoundLog", Amount = 8 },
-                        new RequirementConfig { Item = "BronzeNails", Amount = 5 }
+                        new RequirementConfig { Item = "RoundLog", Amount = 8, Recover = true },
+                        new RequirementConfig { Item = "BronzeNails", Amount = 5, Recover = true }
                     }
                 }));
 
@@ -332,9 +330,9 @@ namespace OdinArchitect
                     CraftingStation = "piece_workbench",
                     Requirements = new[]
                     {
-                        new RequirementConfig { Item = "Coal", Amount = 20 },
-                        new RequirementConfig { Item = "SurtlingCore", Amount = 4 },
-                        new RequirementConfig { Item = "Iron", Amount = 5 }
+                        new RequirementConfig { Item = "Coal", Amount = 20, Recover = true },
+                        new RequirementConfig { Item = "SurtlingCore", Amount = 4, Recover = true },
+                        new RequirementConfig { Item = "Iron", Amount = 5, Recover = true }
                     }
                 }));
 
@@ -347,9 +345,9 @@ namespace OdinArchitect
                     CraftingStation = "forge",
                     Requirements = new[]
                     {
-                        new RequirementConfig { Item = "Wood", Amount = 1 },
-                        new RequirementConfig { Item = "SurtlingCore", Amount = 1 },
-                        new RequirementConfig { Item = "Iron", Amount = 3 }
+                        new RequirementConfig { Item = "Wood", Amount = 1, Recover = true },
+                        new RequirementConfig { Item = "SurtlingCore", Amount = 1, Recover = true },
+                        new RequirementConfig { Item = "Iron", Amount = 3, Recover = true }
                     }
                 }));
 
@@ -362,9 +360,9 @@ namespace OdinArchitect
                     CraftingStation = "forge",
                     Requirements = new[]
                     {
-                        new RequirementConfig { Item = "Wood", Amount = 10 },
-                        new RequirementConfig { Item = "SurtlingCore", Amount = 1 },
-                        new RequirementConfig { Item = "Iron", Amount = 5 }
+                        new RequirementConfig { Item = "Wood", Amount = 10, Recover = true },
+                        new RequirementConfig { Item = "SurtlingCore", Amount = 1, Recover = true },
+                        new RequirementConfig { Item = "Iron", Amount = 5, Recover = true }
                     }
                 }));
 
@@ -377,9 +375,9 @@ namespace OdinArchitect
                     CraftingStation = "forge",
                     Requirements = new[]
                     {
-                        new RequirementConfig { Item = "Wood", Amount = 14 },
-                        new RequirementConfig { Item = "SurtlingCore", Amount = 2 },
-                        new RequirementConfig { Item = "Iron", Amount = 7 }
+                        new RequirementConfig { Item = "Wood", Amount = 14, Recover = true },
+                        new RequirementConfig { Item = "SurtlingCore", Amount = 2, Recover = true },
+                        new RequirementConfig { Item = "Iron", Amount = 7, Recover = true }
                     }
                 }));
 
@@ -392,9 +390,9 @@ namespace OdinArchitect
                     CraftingStation = "forge",
                     Requirements = new[]
                     {
-                        new RequirementConfig { Item = "Wood", Amount = 5 },
-                        new RequirementConfig { Item = "SurtlingCore", Amount = 1 },
-                        new RequirementConfig { Item = "Iron", Amount = 3 }
+                        new RequirementConfig { Item = "Wood", Amount = 5, Recover = true },
+                        new RequirementConfig { Item = "SurtlingCore", Amount = 1, Recover = true },
+                        new RequirementConfig { Item = "Iron", Amount = 3, Recover = true }
                     }
                 }));
 
@@ -407,7 +405,7 @@ namespace OdinArchitect
                     CraftingStation = "piece_stonecutter",
                     Requirements = new[]
                     {
-                        new RequirementConfig { Item = "Stone", Amount = 1 }
+                        new RequirementConfig { Item = "Stone", Amount = 1, Recover = true }
                     }
                 }));
 
@@ -420,7 +418,7 @@ namespace OdinArchitect
                     CraftingStation = "piece_stonecutter",
                     Requirements = new[]
                     {
-                        new RequirementConfig { Item = "Stone", Amount = 2 }
+                        new RequirementConfig { Item = "Stone", Amount = 2, Recover = true }
                     }
                 }));
 
@@ -433,7 +431,7 @@ namespace OdinArchitect
                     CraftingStation = "piece_stonecutter",
                     Requirements = new[]
                     {
-                        new RequirementConfig { Item = "Stone", Amount = 1 }
+                        new RequirementConfig { Item = "Stone", Amount = 1, Recover = true }
                     }
                 }));
 
@@ -446,7 +444,7 @@ namespace OdinArchitect
                     CraftingStation = "piece_stonecutter",
                     Requirements = new[]
                     {
-                        new RequirementConfig { Item = "Stone", Amount = 2 }
+                        new RequirementConfig { Item = "Stone", Amount = 2, Recover = true }
                     }
                 }));
 
@@ -459,8 +457,8 @@ namespace OdinArchitect
                     CraftingStation = "piece_stonecutter",
                     Requirements = new[]
                     {
-                        new RequirementConfig { Item = "Wood", Amount = 2 },
-                        new RequirementConfig { Item = "Stone", Amount = 5 }
+                        new RequirementConfig { Item = "Wood", Amount = 2, Recover = true },
+                        new RequirementConfig { Item = "Stone", Amount = 5, Recover = true }
                     }
                 }));
 
@@ -473,8 +471,8 @@ namespace OdinArchitect
                     CraftingStation = "piece_stonecutter",
                     Requirements = new[]
                     {
-                        new RequirementConfig { Item = "Wood", Amount = 4 },
-                        new RequirementConfig { Item = "Stone", Amount = 10 }
+                        new RequirementConfig { Item = "Wood", Amount = 4, Recover = true },
+                        new RequirementConfig { Item = "Stone", Amount = 10, Recover = true }
                     }
                 }));
 
@@ -487,7 +485,7 @@ namespace OdinArchitect
                     CraftingStation = "piece_stonecutter",
                     Requirements = new[]
                     {
-                        new RequirementConfig { Item = "Stone", Amount = 40 }
+                        new RequirementConfig { Item = "Stone", Amount = 40, Recover = true }
                     }
                 }));
 
@@ -500,7 +498,7 @@ namespace OdinArchitect
                     CraftingStation = "piece_stonecutter",
                     Requirements = new[]
                     {
-                        new RequirementConfig { Item = "Stone", Amount = 15 }
+                        new RequirementConfig { Item = "Stone", Amount = 15, Recover = true }
                     }
                 }));
 
@@ -513,7 +511,7 @@ namespace OdinArchitect
                     CraftingStation = "piece_stonecutter",
                     Requirements = new[]
                     {
-                        new RequirementConfig { Item = "Stone", Amount = 12 }
+                        new RequirementConfig { Item = "Stone", Amount = 12, Recover = true }
                     }
                 }));
 
@@ -526,9 +524,9 @@ namespace OdinArchitect
                     CraftingStation = "piece_stonecutter",
                     Requirements = new[]
                     {
-                            new RequirementConfig { Item = "Stone", Amount = 15 },
-                            new RequirementConfig { Item = "Iron", Amount = 10 },
-                            new RequirementConfig { Item = "Silver", Amount = 10 }
+                            new RequirementConfig { Item = "Stone", Amount = 15, Recover = true },
+                            new RequirementConfig { Item = "Iron", Amount = 10, Recover = true },
+                            new RequirementConfig { Item = "Silver", Amount = 10, Recover = true }
                     }
                 }));
 
@@ -541,7 +539,7 @@ namespace OdinArchitect
                     CraftingStation = "piece_stonecutter",
                     Requirements = new[]
                     {
-                        new RequirementConfig { Item = "Stone", Amount = 2 }
+                        new RequirementConfig { Item = "Stone", Amount = 2, Recover = true }
                     }
                 }));
 
@@ -554,7 +552,7 @@ namespace OdinArchitect
                     CraftingStation = "piece_stonecutter",
                     Requirements = new[]
                     {
-                        new RequirementConfig { Item = "Stone", Amount = 4 }
+                        new RequirementConfig { Item = "Stone", Amount = 4, Recover = true }
                     }
                 }));
 
@@ -567,7 +565,7 @@ namespace OdinArchitect
                     CraftingStation = "piece_stonecutter",
                     Requirements = new[]
                     {
-                        new RequirementConfig { Item = "Stone", Amount = 12 }
+                        new RequirementConfig { Item = "Stone", Amount = 12, Recover = true }
                     }
                 }));
 
@@ -580,7 +578,7 @@ namespace OdinArchitect
                     CraftingStation = "piece_stonecutter",
                     Requirements = new[]
                     {
-                        new RequirementConfig { Item = "Stone", Amount = 2 }
+                        new RequirementConfig { Item = "Stone", Amount = 2, Recover = true }
                     }
                 }));
 
@@ -593,7 +591,7 @@ namespace OdinArchitect
                     CraftingStation = "piece_stonecutter",
                     Requirements = new[]
                     {
-                        new RequirementConfig { Item = "Stone", Amount = 6 }
+                        new RequirementConfig { Item = "Stone", Amount = 6, Recover = true }
                     }
                 }));
 
@@ -606,7 +604,7 @@ namespace OdinArchitect
                     CraftingStation = "piece_stonecutter",
                     Requirements = new[]
                     {
-                        new RequirementConfig { Item = "Stone", Amount = 6 }
+                        new RequirementConfig { Item = "Stone", Amount = 6, Recover = true }
                     }
                 }));
 
@@ -619,7 +617,7 @@ namespace OdinArchitect
                     CraftingStation = "piece_stonecutter",
                     Requirements = new[]
                     {
-                        new RequirementConfig { Item = "Stone", Amount = 24 }
+                        new RequirementConfig { Item = "Stone", Amount = 24, Recover = true }
                     }
                 }));
 
@@ -632,7 +630,7 @@ namespace OdinArchitect
                     CraftingStation = "forge",
                     Requirements = new[]
                     {
-                        new RequirementConfig { Item = "Iron", Amount = 35 }
+                        new RequirementConfig { Item = "Iron", Amount = 35, Recover = true }
                     }
                 }));
 
@@ -645,7 +643,7 @@ namespace OdinArchitect
                     CraftingStation = "forge",
                     Requirements = new[]
                     {
-                        new RequirementConfig { Item = "Iron", Amount = 35 }
+                        new RequirementConfig { Item = "Iron", Amount = 35, Recover = true }
                     }
                 }));
 
@@ -658,7 +656,7 @@ namespace OdinArchitect
                     CraftingStation = "forge",
                     Requirements = new[]
                     {
-                        new RequirementConfig { Item = "Iron", Amount = 5 }
+                        new RequirementConfig { Item = "Iron", Amount = 5, Recover = true }
                     }
                 }));
 
@@ -737,7 +735,6 @@ namespace OdinArchitect
             MaterialReplacer.ReplaceAllMaterialsWithOriginal(OdinArchitect.OA_iron_dragon_prefab);
             MaterialReplacer.ReplaceAllMaterialsWithOriginal(OdinArchitect.OA_iron_gate_big_prefab);
             MaterialReplacer.ReplaceAllMaterialsWithOriginal(OdinArchitect.OA_iron_gate_small_prefab);
-            MaterialReplacer.ReplaceAllMaterialsWithOriginal(OdinArchitect.OA_bird_house_prefab);
         }
 
         private void OA_AddLocales()

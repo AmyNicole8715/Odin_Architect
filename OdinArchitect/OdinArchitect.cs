@@ -20,7 +20,7 @@ namespace OdinArchitect
     {
         public const string PluginGUID = "com.raelaziel";
         public const string PluginName = "OdinArchitect";
-        public const string PluginVersion = "0.0.1";
+        public const string PluginVersion = "0.0.2";
 
         private AssetBundle OdinArchitectBundle;
         private static GameObject OA_wooden_gate_1_prefab;
@@ -103,6 +103,32 @@ namespace OdinArchitect
         private CustomPiece OA_iron_gate_big;
         private static GameObject OA_iron_gate_small_prefab;
         private CustomPiece OA_iron_gate_small;
+        private static GameObject OA_piece_woodbeam_25_thin_prefab;
+        private CustomPiece OA_piece_woodbeam_25_thin;
+        private static GameObject OA_piece_woodbeam_45_thin_prefab;
+        private CustomPiece OA_piece_woodbeam_45_thin;
+        private static GameObject OA_iron_beam_short_prefab;
+        private static GameObject OA_iron_beam_long_prefab;
+        private static GameObject OA_iron_pole_short_prefab;
+        private static GameObject OA_iron_pole_long_prefab;
+        private CustomPiece OA_iron_beam_short;
+        private CustomPiece OA_iron_beam_long;
+        private CustomPiece OA_iron_pole_short;
+        private CustomPiece OA_iron_pole_long;
+        private static GameObject OA_thin_iron_beam_1_prefab;
+        private CustomPiece OA_thin_iron_beam_1;
+        private static GameObject OA_thin_iron_beam_2_prefab;
+        private CustomPiece OA_thin_iron_beam_2;
+        private static GameObject OA_thin_iron_pole_1_prefab;
+        private CustomPiece OA_thin_iron_pole_1;
+        private static GameObject OA_thin_iron_pole_2_prefab;
+        private CustomPiece OA_thin_iron_pole_2;
+        private static GameObject OA_piece_ironbeam_45_thin_prefab;
+        private static GameObject OA_piece_ironbeam_25_thin_prefab;
+        private CustomPiece OA_piece_ironbeam_25_thin;
+        private CustomPiece OA_piece_ironbeam_45_thin;
+        private static GameObject OA_stone_floor_1_new_prefab;
+        private CustomPiece OA_stone_floor_1_new;
 
         private void Awake()
         {
@@ -261,6 +287,110 @@ namespace OdinArchitect
                     Requirements = new[]
                     {
                         new RequirementConfig { Item = "Wood", Amount = 2, Recover = true }
+                    }
+                }));
+
+            OdinArchitect.OA_piece_woodbeam_25_thin_prefab = OdinArchitectBundle.LoadAsset<GameObject>("piece_woodbeam_25_thin");
+            PieMan.AddPiece(OA_piece_woodbeam_25_thin = new CustomPiece(OA_piece_woodbeam_25_thin_prefab,
+                new PieceConfig
+                {
+                    PieceTable = "Hammer",
+                    AllowedInDungeons = true,
+                    CraftingStation = "piece_workbench",
+                    Requirements = new[]
+                    {
+                        new RequirementConfig { Item = "Wood", Amount = 1, Recover = true }
+                    }
+                }));
+
+            OdinArchitect.OA_piece_woodbeam_45_thin_prefab = OdinArchitectBundle.LoadAsset<GameObject>("piece_woodbeam_45_thin");
+            PieMan.AddPiece(OA_piece_woodbeam_45_thin = new CustomPiece(OA_piece_woodbeam_45_thin_prefab,
+                new PieceConfig
+                {
+                    PieceTable = "Hammer",
+                    AllowedInDungeons = true,
+                    CraftingStation = "piece_workbench",
+                    Requirements = new[]
+                    {
+                        new RequirementConfig { Item = "Wood", Amount = 1, Recover = true }
+                    }
+                }));
+
+            OdinArchitect.OA_thin_iron_beam_1_prefab = OdinArchitectBundle.LoadAsset<GameObject>("thin_iron_beam_1");
+            PieMan.AddPiece(OA_thin_iron_beam_1 = new CustomPiece(OA_thin_iron_beam_1_prefab,
+                new PieceConfig
+                {
+                    PieceTable = "Hammer",
+                    AllowedInDungeons = true,
+                    CraftingStation = "forge",
+                    Requirements = new[]
+                    {
+                        new RequirementConfig { Item = "Iron", Amount = 2, Recover = true }
+                    }
+                }));
+
+            OdinArchitect.OA_thin_iron_beam_2_prefab = OdinArchitectBundle.LoadAsset<GameObject>("thin_iron_beam_2");
+            PieMan.AddPiece(OA_thin_iron_beam_2 = new CustomPiece(OA_thin_iron_beam_2_prefab,
+                new PieceConfig
+                {
+                    PieceTable = "Hammer",
+                    AllowedInDungeons = true,
+                    CraftingStation = "forge",
+                    Requirements = new[]
+                    {
+                        new RequirementConfig { Item = "Iron", Amount = 1, Recover = true }
+                    }
+                }));
+
+            OdinArchitect.OA_thin_iron_pole_1_prefab = OdinArchitectBundle.LoadAsset<GameObject>("thin_iron_pole_1");
+            PieMan.AddPiece(OA_thin_iron_pole_1 = new CustomPiece(OA_thin_iron_pole_1_prefab,
+                new PieceConfig
+                {
+                    PieceTable = "Hammer",
+                    AllowedInDungeons = true,
+                    CraftingStation = "forge",
+                    Requirements = new[]
+                    {
+                        new RequirementConfig { Item = "Iron", Amount = 1, Recover = true }
+                    }
+                }));
+
+            OdinArchitect.OA_thin_iron_pole_2_prefab = OdinArchitectBundle.LoadAsset<GameObject>("thin_iron_pole_2");
+            PieMan.AddPiece(OA_thin_iron_pole_2 = new CustomPiece(OA_thin_iron_pole_2_prefab,
+                new PieceConfig
+                {
+                    PieceTable = "Hammer",
+                    AllowedInDungeons = true,
+                    CraftingStation = "forge",
+                    Requirements = new[]
+                    {
+                        new RequirementConfig { Item = "Iron", Amount = 2, Recover = true }
+                    }
+                }));
+
+            OdinArchitect.OA_piece_ironbeam_25_thin_prefab = OdinArchitectBundle.LoadAsset<GameObject>("piece_ironbeam_25_thin");
+            PieMan.AddPiece(OA_piece_ironbeam_25_thin = new CustomPiece(OA_piece_ironbeam_25_thin_prefab,
+                new PieceConfig
+                {
+                    PieceTable = "Hammer",
+                    AllowedInDungeons = true,
+                    CraftingStation = "forge",
+                    Requirements = new[]
+                    {
+                        new RequirementConfig { Item = "Iron", Amount = 1, Recover = true }
+                    }
+                }));
+
+            OdinArchitect.OA_piece_ironbeam_45_thin_prefab = OdinArchitectBundle.LoadAsset<GameObject>("piece_ironbeam_45_thin");
+            PieMan.AddPiece(OA_piece_ironbeam_45_thin = new CustomPiece(OA_piece_ironbeam_45_thin_prefab,
+                new PieceConfig
+                {
+                    PieceTable = "Hammer",
+                    AllowedInDungeons = true,
+                    CraftingStation = "forge",
+                    Requirements = new[]
+                    {
+                        new RequirementConfig { Item = "Iron", Amount = 1, Recover = true }
                     }
                 }));
 
@@ -448,6 +578,58 @@ namespace OdinArchitect
                     }
                 }));
 
+            OdinArchitect.OA_iron_beam_short_prefab = OdinArchitectBundle.LoadAsset<GameObject>("iron_beam_short");
+            PieMan.AddPiece(OA_iron_beam_short = new CustomPiece(OA_iron_beam_short_prefab,
+                new PieceConfig
+                {
+                    PieceTable = "Hammer",
+                    AllowedInDungeons = true,
+                    CraftingStation = "forge",
+                    Requirements = new[]
+                    {
+                        new RequirementConfig { Item = "Iron", Amount = 1, Recover = true }
+                    }
+                }));
+
+            OdinArchitect.OA_iron_beam_long_prefab = OdinArchitectBundle.LoadAsset<GameObject>("iron_beam_long");
+            PieMan.AddPiece(OA_iron_beam_long = new CustomPiece(OA_iron_beam_long_prefab,
+                new PieceConfig
+                {
+                    PieceTable = "Hammer",
+                    AllowedInDungeons = true,
+                    CraftingStation = "forge",
+                    Requirements = new[]
+                    {
+                        new RequirementConfig { Item = "Iron", Amount = 2, Recover = true }
+                    }
+                }));
+
+            OdinArchitect.OA_iron_pole_short_prefab = OdinArchitectBundle.LoadAsset<GameObject>("iron_pole_short");
+            PieMan.AddPiece(OA_iron_pole_short = new CustomPiece(OA_iron_pole_short_prefab,
+                new PieceConfig
+                {
+                    PieceTable = "Hammer",
+                    AllowedInDungeons = true,
+                    CraftingStation = "forge",
+                    Requirements = new[]
+                    {
+                        new RequirementConfig { Item = "Iron", Amount = 1, Recover = true }
+                    }
+                }));
+
+            OdinArchitect.OA_iron_pole_long_prefab = OdinArchitectBundle.LoadAsset<GameObject>("iron_pole_long");
+            PieMan.AddPiece(OA_iron_pole_long = new CustomPiece(OA_iron_pole_long_prefab,
+                new PieceConfig
+                {
+                    PieceTable = "Hammer",
+                    AllowedInDungeons = true,
+                    CraftingStation = "forge",
+                    Requirements = new[]
+                    {
+                        new RequirementConfig { Item = "Iron", Amount = 2, Recover = true }
+                    }
+                }));
+
             OdinArchitect.OA_stone_window_small_prefab = OdinArchitectBundle.LoadAsset<GameObject>("stone_window_small");
             PieMan.AddPiece(OA_stone_window_small = new CustomPiece(OA_stone_window_small_prefab,
                 new PieceConfig
@@ -527,6 +709,19 @@ namespace OdinArchitect
                             new RequirementConfig { Item = "Stone", Amount = 15, Recover = true },
                             new RequirementConfig { Item = "Iron", Amount = 10, Recover = true },
                             new RequirementConfig { Item = "Silver", Amount = 10, Recover = true }
+                    }
+                }));
+
+            OdinArchitect.OA_stone_floor_1_new_prefab = OdinArchitectBundle.LoadAsset<GameObject>("stone_floor_1_new");
+            PieMan.AddPiece(OA_stone_floor_1_new = new CustomPiece(OA_stone_floor_1_new_prefab,
+                new PieceConfig
+                {
+                    PieceTable = "Hammer",
+                    AllowedInDungeons = true,
+                    CraftingStation = "piece_stonecutter",
+                    Requirements = new[]
+                    {
+                        new RequirementConfig { Item = "Stone", Amount = 6, Recover = true }
                     }
                 }));
 
@@ -706,6 +901,10 @@ namespace OdinArchitect
             MaterialReplacer.ReplaceAllMaterialsWithOriginal(OdinArchitect.OA_thin_wood_beam_2_prefab);
             MaterialReplacer.ReplaceAllMaterialsWithOriginal(OdinArchitect.OA_thin_wood_pole_1_prefab);
             MaterialReplacer.ReplaceAllMaterialsWithOriginal(OdinArchitect.OA_thin_wood_pole_2_prefab);
+            MaterialReplacer.ReplaceAllMaterialsWithOriginal(OdinArchitect.OA_thin_iron_beam_1_prefab);
+            MaterialReplacer.ReplaceAllMaterialsWithOriginal(OdinArchitect.OA_thin_iron_beam_2_prefab);
+            MaterialReplacer.ReplaceAllMaterialsWithOriginal(OdinArchitect.OA_thin_iron_pole_1_prefab);
+            MaterialReplacer.ReplaceAllMaterialsWithOriginal(OdinArchitect.OA_thin_iron_pole_2_prefab);
             MaterialReplacer.ReplaceAllMaterialsWithOriginal(OdinArchitect.OA_wooden_drawbridge_1_prefab);
             MaterialReplacer.ReplaceAllMaterialsWithOriginal(OdinArchitect.OA_wooden_arch_1_prefab);
             MaterialReplacer.ReplaceAllMaterialsWithOriginal(OdinArchitect.OA_refined_stakewall_1_prefab);
@@ -735,6 +934,15 @@ namespace OdinArchitect
             MaterialReplacer.ReplaceAllMaterialsWithOriginal(OdinArchitect.OA_iron_dragon_prefab);
             MaterialReplacer.ReplaceAllMaterialsWithOriginal(OdinArchitect.OA_iron_gate_big_prefab);
             MaterialReplacer.ReplaceAllMaterialsWithOriginal(OdinArchitect.OA_iron_gate_small_prefab);
+            MaterialReplacer.ReplaceAllMaterialsWithOriginal(OdinArchitect.OA_piece_woodbeam_25_thin_prefab);
+            MaterialReplacer.ReplaceAllMaterialsWithOriginal(OdinArchitect.OA_piece_woodbeam_45_thin_prefab);
+            MaterialReplacer.ReplaceAllMaterialsWithOriginal(OdinArchitect.OA_piece_ironbeam_25_thin_prefab);
+            MaterialReplacer.ReplaceAllMaterialsWithOriginal(OdinArchitect.OA_piece_ironbeam_45_thin_prefab);
+            MaterialReplacer.ReplaceAllMaterialsWithOriginal(OdinArchitect.OA_iron_beam_short_prefab);
+            MaterialReplacer.ReplaceAllMaterialsWithOriginal(OdinArchitect.OA_iron_beam_long_prefab);
+            MaterialReplacer.ReplaceAllMaterialsWithOriginal(OdinArchitect.OA_iron_pole_short_prefab);
+            MaterialReplacer.ReplaceAllMaterialsWithOriginal(OdinArchitect.OA_iron_pole_long_prefab);
+            MaterialReplacer.ReplaceAllMaterialsWithOriginal(OdinArchitect.OA_stone_floor_1_new_prefab);
         }
 
         private void OA_AddLocales()

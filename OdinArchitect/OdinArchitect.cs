@@ -158,7 +158,7 @@ namespace OdinArchitect
 
         private void OA_LoadAssets()
         {
-            OdinArchitectBundle = AssetUtils.LoadAssetBundle("OdinArchitect/Assets/odinarchitect");
+            OdinArchitectBundle = AssetUtils.LoadAssetBundleFromResources("odinarchitect", typeof(OdinArchitect).Assembly);
             Jotunn.Logger.LogInfo("Assets [" + OdinArchitectBundle + "] loaded succesfully");
         }
 

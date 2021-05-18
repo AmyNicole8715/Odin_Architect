@@ -129,6 +129,26 @@ namespace OdinArchitect
         private CustomPiece OA_piece_ironbeam_45_thin;
         private static GameObject OA_stone_floor_1_new_prefab;
         private CustomPiece OA_stone_floor_1_new;
+        private static GameObject OA_rae_woodwall_1_prefab;
+        private CustomPiece OA_rae_woodwall_1;
+        private static GameObject OA_rae_woodwall_2_prefab;
+        private static GameObject OA_rae_woodwall_3_prefab;
+        private static GameObject OA_rae_woodwall_4_prefab;
+        private CustomPiece OA_rae_woodwall_2;
+        private CustomPiece OA_rae_woodwall_3;
+        private CustomPiece OA_rae_woodwall_4;
+        private static GameObject OA_rae_woodwall_half_prefab;
+        private CustomPiece OA_rae_woodwall_half;
+        private static GameObject OA_rae_woodwall_3_half_prefab;
+        private CustomPiece OA_rae_woodwall_3_half;
+        private static GameObject OA_rae_woodwall_1_half_prefab;
+        private CustomPiece OA_rae_woodwall_1_half;
+        private static GameObject OA_rae_woodwall_2_half_prefab;
+        private CustomPiece OA_rae_woodwall_2_half;
+        private static GameObject OA_rae_woodwall_4_half_prefab;
+        private CustomPiece OA_rae_woodwall_4_half;
+        private static GameObject OA_bird_house_prefab;
+        private CustomPiece OA_bird_house;
 
         private void Awake()
         {
@@ -146,6 +166,127 @@ namespace OdinArchitect
         {
             Harmony.CreateAndPatchAll(Assembly.GetExecutingAssembly(), "com.raelaziel");
             PieceManager PieMan = PieceManager.Instance;
+
+            OdinArchitect.OA_rae_woodwall_half_prefab = OdinArchitectBundle.LoadAsset<GameObject>("rae_woodwall_half");
+            PieMan.AddPiece(OA_rae_woodwall_half = new CustomPiece(OA_rae_woodwall_half_prefab,
+                new PieceConfig
+                {
+                    PieceTable = "Hammer",
+                    AllowedInDungeons = true,
+                    CraftingStation = "piece_workbench",
+                    Requirements = new[]
+                    {
+                        new RequirementConfig { Item = "Wood", Amount = 1, Recover = true }
+                    }
+                }));
+
+            OdinArchitect.OA_rae_woodwall_3_prefab = OdinArchitectBundle.LoadAsset<GameObject>("rae_woodwall_3");
+            PieMan.AddPiece(OA_rae_woodwall_3 = new CustomPiece(OA_rae_woodwall_3_prefab,
+                new PieceConfig
+                {
+                    PieceTable = "Hammer",
+                    AllowedInDungeons = true,
+                    CraftingStation = "piece_workbench",
+                    Requirements = new[]
+                    {
+                        new RequirementConfig { Item = "Wood", Amount = 2, Recover = true }
+                    }
+                }));
+
+            OdinArchitect.OA_rae_woodwall_3_half_prefab = OdinArchitectBundle.LoadAsset<GameObject>("rae_woodwall_3_half");
+            PieMan.AddPiece(OA_rae_woodwall_3_half = new CustomPiece(OA_rae_woodwall_3_half_prefab,
+                new PieceConfig
+                {
+                    PieceTable = "Hammer",
+                    AllowedInDungeons = true,
+                    CraftingStation = "piece_workbench",
+                    Requirements = new[]
+                    {
+                        new RequirementConfig { Item = "Wood", Amount = 1, Recover = true }
+                    }
+                }));
+
+            OdinArchitect.OA_rae_woodwall_1_prefab = OdinArchitectBundle.LoadAsset<GameObject>("rae_woodwall_1");
+            PieMan.AddPiece(OA_rae_woodwall_1 = new CustomPiece(OA_rae_woodwall_1_prefab,
+                new PieceConfig
+                {
+                    PieceTable = "Hammer",
+                    AllowedInDungeons = true,
+                    CraftingStation = "piece_workbench",
+                    Requirements = new[]
+                    {
+                        new RequirementConfig { Item = "RoundLog", Amount = 2, Recover = true },
+                        new RequirementConfig { Item = "Wood", Amount = 1, Recover = true }
+                    }
+                }));
+
+            OdinArchitect.OA_rae_woodwall_1_half_prefab = OdinArchitectBundle.LoadAsset<GameObject>("rae_woodwall_1_half");
+            PieMan.AddPiece(OA_rae_woodwall_1_half = new CustomPiece(OA_rae_woodwall_1_half_prefab,
+                new PieceConfig
+                {
+                    PieceTable = "Hammer",
+                    AllowedInDungeons = true,
+                    CraftingStation = "piece_workbench",
+                    Requirements = new[]
+                    {
+                        new RequirementConfig { Item = "RoundLog", Amount = 1, Recover = true },
+                        new RequirementConfig { Item = "Wood", Amount = 1, Recover = true }
+                    }
+                }));
+
+            OdinArchitect.OA_rae_woodwall_2_prefab = OdinArchitectBundle.LoadAsset<GameObject>("rae_woodwall_2");
+            PieMan.AddPiece(OA_rae_woodwall_2 = new CustomPiece(OA_rae_woodwall_2_prefab,
+                new PieceConfig
+                {
+                    PieceTable = "Hammer",
+                    AllowedInDungeons = true,
+                    CraftingStation = "piece_workbench",
+                    Requirements = new[]
+                    {
+                        new RequirementConfig { Item = "RoundLog", Amount = 2, Recover = true },
+                        new RequirementConfig { Item = "Wood", Amount = 1, Recover = true }
+                    }
+                }));
+
+            OdinArchitect.OA_rae_woodwall_2_half_prefab = OdinArchitectBundle.LoadAsset<GameObject>("rae_woodwall_2_half");
+            PieMan.AddPiece(OA_rae_woodwall_2_half = new CustomPiece(OA_rae_woodwall_2_half_prefab,
+                new PieceConfig
+                {
+                    PieceTable = "Hammer",
+                    AllowedInDungeons = true,
+                    CraftingStation = "piece_workbench",
+                    Requirements = new[]
+                    {
+                        new RequirementConfig { Item = "RoundLog", Amount = 1, Recover = true },
+                        new RequirementConfig { Item = "Wood", Amount = 1, Recover = true }
+                    }
+                }));
+
+            OdinArchitect.OA_rae_woodwall_4_prefab = OdinArchitectBundle.LoadAsset<GameObject>("rae_woodwall_4");
+            PieMan.AddPiece(OA_rae_woodwall_4 = new CustomPiece(OA_rae_woodwall_4_prefab,
+                new PieceConfig
+                {
+                    PieceTable = "Hammer",
+                    AllowedInDungeons = true,
+                    CraftingStation = "piece_workbench",
+                    Requirements = new[]
+                    {
+                        new RequirementConfig { Item = "ElderBark", Amount = 1, Recover = true }
+                    }
+                }));
+
+            OdinArchitect.OA_rae_woodwall_4_half_prefab = OdinArchitectBundle.LoadAsset<GameObject>("rae_woodwall_4_half");
+            PieMan.AddPiece(OA_rae_woodwall_4_half = new CustomPiece(OA_rae_woodwall_4_half_prefab,
+                new PieceConfig
+                {
+                    PieceTable = "Hammer",
+                    AllowedInDungeons = true,
+                    CraftingStation = "piece_workbench",
+                    Requirements = new[]
+                    {
+                        new RequirementConfig { Item = "ElderBark", Amount = 1, Recover = true }
+                    }
+                }));
 
             OdinArchitect.OA_wooden_gate_1_prefab = OdinArchitectBundle.LoadAsset<GameObject>("wooden_gate_1");
             PieMan.AddPiece(OA_wooden_gate_1 = new CustomPiece(OA_wooden_gate_1_prefab,
@@ -247,7 +388,7 @@ namespace OdinArchitect
                     CraftingStation = "piece_workbench",
                     Requirements = new[]
                     {
-                        new RequirementConfig { Item = "Wood", Amount = 2, Recover = true }
+                        new RequirementConfig { Item = "FineWood", Amount = 2, Recover = true }
                     }
                 }));
 
@@ -260,7 +401,7 @@ namespace OdinArchitect
                     CraftingStation = "piece_workbench",
                     Requirements = new[]
                     {
-                        new RequirementConfig { Item = "Wood", Amount = 1, Recover = true }
+                        new RequirementConfig { Item = "FineWood", Amount = 1, Recover = true }
                     }
                 }));
 
@@ -273,7 +414,7 @@ namespace OdinArchitect
                     CraftingStation = "piece_workbench",
                     Requirements = new[]
                     {
-                        new RequirementConfig { Item = "Wood", Amount = 1, Recover = true }
+                        new RequirementConfig { Item = "FineWood", Amount = 1, Recover = true }
                     }
                 }));
 
@@ -286,7 +427,7 @@ namespace OdinArchitect
                     CraftingStation = "piece_workbench",
                     Requirements = new[]
                     {
-                        new RequirementConfig { Item = "Wood", Amount = 2, Recover = true }
+                        new RequirementConfig { Item = "FineWood", Amount = 2, Recover = true }
                     }
                 }));
 
@@ -299,7 +440,7 @@ namespace OdinArchitect
                     CraftingStation = "piece_workbench",
                     Requirements = new[]
                     {
-                        new RequirementConfig { Item = "Wood", Amount = 1, Recover = true }
+                        new RequirementConfig { Item = "FineWood", Amount = 1, Recover = true }
                     }
                 }));
 
@@ -312,7 +453,7 @@ namespace OdinArchitect
                     CraftingStation = "piece_workbench",
                     Requirements = new[]
                     {
-                        new RequirementConfig { Item = "Wood", Amount = 1, Recover = true }
+                        new RequirementConfig { Item = "FineWood", Amount = 1, Recover = true }
                     }
                 }));
 
@@ -855,6 +996,21 @@ namespace OdinArchitect
                     }
                 }));
 
+            OdinArchitect.OA_bird_house_prefab = OdinArchitectBundle.LoadAsset<GameObject>("bird_house");
+            PieMan.AddPiece(OA_bird_house = new CustomPiece(OA_bird_house_prefab,
+                new PieceConfig
+                {
+                    PieceTable = "Hammer",
+                    AllowedInDungeons = true,
+                    CraftingStation = "piece_workbench",
+                    Requirements = new[]
+                    {
+                        new RequirementConfig { Item = "BronzeNails", Amount = 15 },
+                        new RequirementConfig { Item = "FineWood", Amount = 5 },
+                        new RequirementConfig { Item = "Wood", Amount = 1 }
+                    }
+                }));
+
             // OdinArchitect.OA_bird_house_prefab = OdinArchitectBundle.LoadAsset<GameObject>("bird_house");
             // PieMan.AddPiece(OA_bird_house = new CustomPiece(OA_bird_house_prefab,
             //     new PieceConfig
@@ -943,6 +1099,16 @@ namespace OdinArchitect
             MaterialReplacer.ReplaceAllMaterialsWithOriginal(OdinArchitect.OA_iron_pole_short_prefab);
             MaterialReplacer.ReplaceAllMaterialsWithOriginal(OdinArchitect.OA_iron_pole_long_prefab);
             MaterialReplacer.ReplaceAllMaterialsWithOriginal(OdinArchitect.OA_stone_floor_1_new_prefab);
+            MaterialReplacer.ReplaceAllMaterialsWithOriginal(OdinArchitect.OA_rae_woodwall_half_prefab);
+            MaterialReplacer.ReplaceAllMaterialsWithOriginal(OdinArchitect.OA_rae_woodwall_1_prefab);
+            MaterialReplacer.ReplaceAllMaterialsWithOriginal(OdinArchitect.OA_rae_woodwall_2_prefab);
+            MaterialReplacer.ReplaceAllMaterialsWithOriginal(OdinArchitect.OA_rae_woodwall_3_prefab);
+            MaterialReplacer.ReplaceAllMaterialsWithOriginal(OdinArchitect.OA_rae_woodwall_4_prefab);
+            MaterialReplacer.ReplaceAllMaterialsWithOriginal(OdinArchitect.OA_rae_woodwall_1_half_prefab);
+            MaterialReplacer.ReplaceAllMaterialsWithOriginal(OdinArchitect.OA_rae_woodwall_2_half_prefab);
+            MaterialReplacer.ReplaceAllMaterialsWithOriginal(OdinArchitect.OA_rae_woodwall_3_half_prefab);
+            MaterialReplacer.ReplaceAllMaterialsWithOriginal(OdinArchitect.OA_rae_woodwall_4_half_prefab);
+            MaterialReplacer.ReplaceAllMaterialsWithOriginal(OdinArchitect.OA_bird_house_prefab);
         }
 
         private void OA_AddLocales()

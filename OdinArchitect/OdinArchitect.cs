@@ -147,6 +147,10 @@ namespace OdinArchitect
         private CustomPiece OA_rae_woodwall_2_half;
         private static GameObject OA_rae_woodwall_4_half_prefab;
         private CustomPiece OA_rae_woodwall_4_half;
+        private static GameObject OA_rae_wood_wall_roof_46_rev_prefab;
+        private CustomPiece OA_rae_wood_wall_roof_46_rev;
+        private static GameObject OA_rae_wood_wall_roof_rev_prefab;
+        private CustomPiece OA_rae_wood_wall_roof_rev;
 
         private void Awake()
         {
@@ -994,6 +998,32 @@ namespace OdinArchitect
                     }
                 }));
 
+            OdinArchitect.OA_rae_wood_wall_roof_46_rev_prefab = OdinArchitectBundle.LoadAsset<GameObject>("rae_wood_wall_roof_46_rev");
+            PieMan.AddPiece(OA_rae_wood_wall_roof_46_rev = new CustomPiece(OA_rae_wood_wall_roof_46_rev_prefab,
+                new PieceConfig
+                {
+                    PieceTable = "Hammer",
+                    AllowedInDungeons = true,
+                    CraftingStation = "piece_workbench",
+                    Requirements = new[]
+                    {
+                        new RequirementConfig { Item = "Wood", Amount = 2, Recover = true }
+                    }
+                }));
+
+            OdinArchitect.OA_rae_wood_wall_roof_rev_prefab = OdinArchitectBundle.LoadAsset<GameObject>("rae_wood_wall_roof_rev");
+            PieMan.AddPiece(OA_rae_wood_wall_roof_rev = new CustomPiece(OA_rae_wood_wall_roof_rev_prefab,
+                new PieceConfig
+                {
+                    PieceTable = "Hammer",
+                    AllowedInDungeons = true,
+                    CraftingStation = "piece_workbench",
+                    Requirements = new[]
+                    {
+                        new RequirementConfig { Item = "Wood", Amount = 2, Recover = true }
+                    }
+                }));
+
             // OdinArchitect.OA__prefab = OdinArchitectBundle.LoadAsset<GameObject>("");
             // PieMan.AddPiece(OA_ = new CustomPiece(OA__prefab,
             //     new PieceConfig
@@ -1076,6 +1106,8 @@ namespace OdinArchitect
             MaterialReplacer.ReplaceAllMaterialsWithOriginal(OdinArchitect.OA_rae_woodwall_2_half_prefab);
             MaterialReplacer.ReplaceAllMaterialsWithOriginal(OdinArchitect.OA_rae_woodwall_3_half_prefab);
             MaterialReplacer.ReplaceAllMaterialsWithOriginal(OdinArchitect.OA_rae_woodwall_4_half_prefab);
+            MaterialReplacer.ReplaceAllMaterialsWithOriginal(OdinArchitect.OA_rae_wood_wall_roof_46_rev_prefab);
+            MaterialReplacer.ReplaceAllMaterialsWithOriginal(OdinArchitect.OA_rae_wood_wall_roof_rev_prefab);
         }
 
         private void OA_AddLocales()

@@ -1,4 +1,5 @@
-This readme drives me nuts every time I visit your git
+I believe this is the root of the current iterations for OdinArchitect I would like to make a compatible version of Val+
+
 
 #ODIN ARCHITECT
 
